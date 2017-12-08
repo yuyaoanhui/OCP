@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.futuredata.judicature</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>OCP-BIGDATA</artifactId>
+	<packaging>pom</packaging>
+	<name>大数据采集与分析工程组织pom文件</name>
+	<modules>
+		<!-- elastic search -->
+		<module>BIGDATA-ES</module>
+	</modules>
+</project>

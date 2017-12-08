@@ -1,0 +1,8 @@
+CSP-UAMS : 统一权限管理系统(Unified authority system)
+CSP-LAMP : 日志分析管理平台(logging analysis management platform)
+CSP-OMMP : 运维监控平台(operation maintenance monitoring platform)
+CSP-ADP : 自动化部署平台(automated deployment platform)
+CSP-CCP : 配置中心(configuration center platform)
+CSP-CACHE : 数据缓存平台(data cache management platform)
+CSP-WORKFLOW : 工作流平台(workflow platform)
+CSP-FILESERVER : 文件服务器(fileserver)

@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.futuredata.judicature</groupId>
+	<artifactId>root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>所有工程的根工程</name>
+
+	<properties>
+		<!-- project -->
+		<project.build.jdk>1.8</project.build.jdk>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<organization>
+		<name>安徽富驰信息技术有限公司</name>
+		<url>http://www.future-data.cn/</url>
+	</organization>
+</project>

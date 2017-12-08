@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.futuredata.judicature</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>OCP-CCL</artifactId>
+	<packaging>pom</packaging>
+	<name>公共组件库组织pom文件</name>
+	<modules>
+		<!-- 软件开发工具包(software development kit) -->
+		<module>CCL-SDK</module>
+		<!-- 插件(plugin) -->
+		<module>CCL-PLUGIN</module>
+		<!-- 中间件(middleware) -->
+		<module>CCL-MIDDLEWARE</module>
+		<!-- 公共工程模板(common project template) -->
+		<module>CCL-COMMON</module>
+		<!-- 基础工程模板(base project template) -->
+		<module>CCL-BASE</module>
+	</modules>
+</project>

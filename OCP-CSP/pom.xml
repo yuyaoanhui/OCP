@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.futuredata.judicature</groupId>
+		<artifactId>root</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>OCP-CSP</artifactId>
+	<packaging>pom</packaging>
+	<name>公共服务平台组织pom文件</name>
+	<modules>
+		<!-- 统一权限管理系统(Unified authority system) -->
+		<module>CSP-UAMS</module>
+		<!-- 日志分析管理平台(logging analysis management platform) -->
+		<module>CSP-LAMP</module>
+		<!-- 运维监控平台(operation maintenance monitoring platform) -->
+		<module>CSP-OMMP</module>
+		<!-- 自动化部署平台(automated deployment platform) -->
+		<module>CSP-ADP</module>
+		<!-- 配置中心(configuration center platform) -->
+		<module>CSP-CCP</module>
+		<!-- 数据缓存平台(data cache management platform) -->
+		<module>CSP-CACHE</module>
+		<!-- 工作流平台(workflow platform) -->
+		<module>CSP-WORKFLOW</module>
+		<!-- 文件服务器(fileserver) -->
+		<module>CSP-FILESERVER</module>
+	</modules>
+</project>

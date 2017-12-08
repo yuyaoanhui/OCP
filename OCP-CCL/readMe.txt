@@ -1,0 +1,5 @@
+CCL-SDK : 软件开发工具包(software development kit)
+CCL-PLUGIN : 插件(plugin)
+CCL-MIDDLEWARE : 中间件(middleware)
+CCL-COMMON : 公共工程模板(common project template)
+CCL-BASE : 基础工程模板(base project template)

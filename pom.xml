@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.futuredata.judicature</groupId>
+	<artifactId>ocp-all</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>能力开放平台(open capacity platform)所有工程组织pom文件</name>
+	<modules>
+		<!-- 公共组件库(common component lib)-->
+		<module>OCP-CCL</module>
+		<!-- 基础服务工程(base service project) -->
+		<module>OCP-BSP</module>
+		<!-- 公共服务平台(common service platform) -->
+		<module>OCP-CSP</module>
+		<!-- 大数据采集与分析(big data) -->
+		<module>OCP-BIGDATA</module>
+		<!-- 人工智能引擎(ai engine) -->
+		<module>OCP-AIE</module>
+		<!-- 业务模型库(bussiness model lib) -->
+		<module>OCP-BML</module>
+		<!-- 平台运营(operation of platform) -->
+		<module>OCP-OOP</module>
+		<!-- 产品族(product) -->
+		<module>PRODUCT</module>
+	</modules>
+</project>
