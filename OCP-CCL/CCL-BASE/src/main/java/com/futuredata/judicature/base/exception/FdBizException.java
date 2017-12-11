@@ -20,7 +20,7 @@ import com.futuredata.judicature.base.result.BaseResultCode;
  * @author yu.yao
  *
  */
-public class FdBizException extends Exception {
+public final class FdBizException extends Exception {
 
   /**
    * 序列化ID
@@ -55,7 +55,7 @@ public class FdBizException extends Exception {
    * @param args 需要输出的业务对象列表
    */
   public <T extends BaseResultCode> FdBizException(String requestId, T resultCode, Object[] args) {
-    super(resultCode.getMsg(), null, false, true);
+    super(serilizeJson(requestId, resultCode), null, false, true);
     this.requestId = requestId;
     this.code = resultCode.getCode();
     this.msg = resultCode.getMsg();
@@ -72,7 +72,7 @@ public class FdBizException extends Exception {
    */
   public <T extends BaseResultCode> FdBizException(String requestId, T resultCode, Object[] args,
       Throwable t) {
-    super(resultCode.getMsg(), t);
+    super(serilizeJson(requestId, resultCode), t);
     this.requestId = requestId;
     this.code = resultCode.getCode();
     this.msg = resultCode.getMsg();
@@ -88,7 +88,7 @@ public class FdBizException extends Exception {
    * @param resultCode 错误码
    */
   public <T extends BaseResultCode> FdBizException(T resultCode) {
-    super(resultCode.getMsg(), null, false, true);
+    super(serilizeJson(null, resultCode), null, false, true);
     this.code = resultCode.getCode();
     this.msg = resultCode.getMsg();
   }
@@ -116,26 +116,10 @@ public class FdBizException extends Exception {
 
   /**
    * 
-   * @param requestId
-   */
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
-  }
-
-  /**
-   * 
    * @return
    */
   public int getCode() {
     return code;
-  }
-
-  /**
-   * 
-   * @param code
-   */
-  public void setCode(int code) {
-    this.code = code;
   }
 
   /**
@@ -148,111 +132,35 @@ public class FdBizException extends Exception {
 
   /**
    * 
-   * @param msg
-   */
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  /**
-   * 
    * @return
    */
   public Object[] getArgs() {
     return args;
   }
 
-  /**
-   * 
-   * @param args
-   */
-  public void setArgs(Object[] args) {
-    this.args = args;
+  private static <T extends BaseResultCode> String serilizeJson(String requestId, T resultCode) {
+    return "{requestId:" + requestId + ",code:" + resultCode.getCode() + ",message:"
+        + resultCode.getMsg() + "}";
   }
 
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  public synchronized Throwable getCause() {
-    // TODO Auto-generated method stub
-    return super.getCause();
+  @SuppressWarnings("unused")
+  private String serilizeJson(String requestId, int code, String message, Object[] args) {
+    String json = "{requestId:" + requestId + ",code:" + code + ",message:" + message + ",args:";
+    if (args != null && args.length > 0) {
+      StringBuilder sb = new StringBuilder("[");
+      for (int i = 0; i < args.length; i++) {
+        sb.append(args[i].toString());
+        if (i == args.length - 1) {
+          sb.append("]");
+        } else {
+          sb.append(",");
+        }
+      }
+      json = json.concat(sb.toString()).concat("}");
+    } else {
+      json = json.concat("[]}");
+    }
+    return json;
   }
 
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  public synchronized Throwable initCause(Throwable cause) {
-    // TODO Auto-generated method stub
-    return super.initCause(cause);
-  }
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  public String toString() {
-    // TODO Auto-generated method stub
-    return super.toString();
-  }
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  public synchronized Throwable fillInStackTrace() {
-    // TODO Auto-generated method stub
-    return super.fillInStackTrace();
-    // return this;
-  }
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  public void setStackTrace(StackTraceElement[] stackTrace) {
-    // TODO Auto-generated method stub
-    super.setStackTrace(stackTrace);
-  }
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  protected Object clone() throws CloneNotSupportedException {
-    // TODO Auto-generated method stub
-    return super.clone();
-  }
-
-  /**
-   * 重写父类的方法
-   * <p>
-   * {@inheritDoc}
-   * </p>
-   */
-  @Override
-  protected void finalize() throws Throwable {
-    // TODO Auto-generated method stub
-    super.finalize();
-  }
 }

@@ -2,11 +2,19 @@ package com.futuredata.judicature.base.model;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
+import javax.validation.constraints.NotNull;
 
+/**
+ * 基础Model类，定义了id并重写了toString()方法
+ * 
+ * @author yu.yao
+ *
+ */
 public class BaseModel implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+  @NotNull
   private String id;
 
   public String getId() {
@@ -25,7 +33,7 @@ public class BaseModel implements Serializable {
     StringBuilder sb = new StringBuilder();
     try {
       Class<?> c = this.getClass();
-      sb.append("{ class:" + this.getClass().getName());
+      sb.append("{class:" + this.getClass().getName());
       for (Method m : c.getMethods()) {
         if (m.getName().startsWith("get") && m.getName().length() > 3
             && m.getParameterTypes().length == 0 && !"getClass".endsWith(m.getName())) {

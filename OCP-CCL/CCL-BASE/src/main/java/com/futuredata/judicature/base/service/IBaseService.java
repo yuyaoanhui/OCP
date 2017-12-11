@@ -1,7 +1,6 @@
 package com.futuredata.judicature.base.service;
 
 import java.util.List;
-
 import com.futuredata.judicature.base.exception.FdBizException;
 import com.futuredata.judicature.base.model.BaseModel;
 
@@ -13,7 +12,7 @@ import com.futuredata.judicature.base.model.BaseModel;
 public interface IBaseService<T extends BaseModel, TExample> {
 
   /**
-   * 保存实体
+   * 保存实体,返回id
    * 
    * @author yu.yao
    * @param
@@ -22,13 +21,13 @@ public interface IBaseService<T extends BaseModel, TExample> {
   String save(T t) throws FdBizException;
 
   /**
-   * 更新实体
+   * 修改实体
    * 
    * @author yu.yao
    * @param
    * @return
    */
-  boolean update(T t) throws FdBizException;
+  boolean modify(T t) throws FdBizException;
 
   /**
    * 根据id删除
@@ -55,7 +54,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  T findOne(String id) throws FdBizException;
+  T queryOne(String id) throws FdBizException;
 
   /**
    * 根据example找到符合条件的记录列表
@@ -64,5 +63,5 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  List<T> findList(TExample example) throws FdBizException;
+  List<T> queryList(TExample example) throws FdBizException;
 }

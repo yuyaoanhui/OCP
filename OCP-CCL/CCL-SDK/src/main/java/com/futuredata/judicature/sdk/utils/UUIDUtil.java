@@ -6,4 +6,5 @@ public class UUIDUtil {
   public static final String generatorID() {
     return UUID.randomUUID().toString().replaceAll("-", "");
   }
+
 }

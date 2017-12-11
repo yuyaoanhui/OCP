@@ -8,7 +8,7 @@ import com.futuredata.judicature.base.model.BaseModel;
 
 
 /**
- * 基础dao，包含基本增删改查和其他通用法法
+ * 基础dao，包含基本增删改查和其他通用方法
  * 
  * @author yu.yao
  *
