@@ -1,8 +1,7 @@
 package com.futuredata.judicature.common.result;
 
 import java.io.Serializable;
-
-import com.futuredata.judicature.common.result.code.ResultCode;
+import com.futuredata.judicature.base.result.ResultCode;
 
 /**
  * 
@@ -22,8 +21,8 @@ public class WebApiResult<T> implements Serializable {
    * 初始化默认返回值
    */
   public WebApiResult() {
-    this.code = ResultCode.SUCCESS.getCode();
-    this.msg = ResultCode.SUCCESS.getMsg();
+    this.code = AbstractCommonResultCode.SYS_SUCCESS.getCode();
+    this.msg = AbstractCommonResultCode.SYS_SUCCESS.getMsg();
   }
 
   public int getCode() {

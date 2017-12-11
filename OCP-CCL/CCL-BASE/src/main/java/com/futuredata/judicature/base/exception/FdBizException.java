@@ -1,6 +1,7 @@
 package com.futuredata.judicature.base.exception;
 
-import com.futuredata.judicature.base.result.BaseResultCode;
+import com.futuredata.judicature.base.result.ResultCode;
+
 
 /**
  * 自定义异常类：
@@ -54,7 +55,7 @@ public final class FdBizException extends Exception {
    * @param resultCode 错误码
    * @param args 需要输出的业务对象列表
    */
-  public <T extends BaseResultCode> FdBizException(String requestId, T resultCode, Object[] args) {
+  public <T extends ResultCode> FdBizException(String requestId, T resultCode, Object[] args) {
     super(serilizeJson(requestId, resultCode), null, false, true);
     this.requestId = requestId;
     this.code = resultCode.getCode();
@@ -70,7 +71,7 @@ public final class FdBizException extends Exception {
    * @param args 需要输出的业务对象列表
    * @param t 被捕获到的异常
    */
-  public <T extends BaseResultCode> FdBizException(String requestId, T resultCode, Object[] args,
+  public <T extends ResultCode> FdBizException(String requestId, T resultCode, Object[] args,
       Throwable t) {
     super(serilizeJson(requestId, resultCode), t);
     this.requestId = requestId;
@@ -87,7 +88,7 @@ public final class FdBizException extends Exception {
    * 
    * @param resultCode 错误码
    */
-  public <T extends BaseResultCode> FdBizException(T resultCode) {
+  public <T extends ResultCode> FdBizException(T resultCode) {
     super(serilizeJson(null, resultCode), null, false, true);
     this.code = resultCode.getCode();
     this.msg = resultCode.getMsg();
@@ -138,7 +139,7 @@ public final class FdBizException extends Exception {
     return args;
   }
 
-  private static <T extends BaseResultCode> String serilizeJson(String requestId, T resultCode) {
+  private static <T extends ResultCode> String serilizeJson(String requestId, T resultCode) {
     return "{requestId:" + requestId + ",code:" + resultCode.getCode() + ",message:"
         + resultCode.getMsg() + "}";
   }

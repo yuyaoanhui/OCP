@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import com.futuredata.judicature.base.dao.BaseMapper;
 import com.futuredata.judicature.base.exception.FdBizException;
 import com.futuredata.judicature.base.model.BaseModel;
-import com.futuredata.judicature.base.result.BaseResultCode;
+import com.futuredata.judicature.base.result.IBaseResultCode;
 import com.futuredata.judicature.sdk.utils.StringUtils;
 import com.futuredata.judicature.sdk.utils.UUIDUtil;
 
@@ -46,7 +46,7 @@ public abstract class AbstractBaseServiceImpl<T extends BaseModel, TExample> imp
       return id;
     } catch (Exception e) {
       logger.error("新增数据发生异常", e);
-      throw new FdBizException("request id", BaseResultCode.SYS_ERROR, new Object[] {t}, e);
+      throw new FdBizException("request id", IBaseResultCode.SYS_ERROR, new Object[] {t}, e);
     }
   }
 
@@ -70,7 +70,7 @@ public abstract class AbstractBaseServiceImpl<T extends BaseModel, TExample> imp
       return false;
     } catch (Exception e) {
       logger.error("修改数据发生异常", e);
-      throw new FdBizException("request id", BaseResultCode.SYS_ERROR, new Object[] {t}, e);
+      throw new FdBizException("request id", IBaseResultCode.SYS_ERROR, new Object[] {t}, e);
     }
   }
 
