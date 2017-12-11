@@ -8,10 +8,14 @@
 	<name>所有工程的根工程</name>
 
 	<properties>
-		<!-- project -->
 		<project.build.jdk>1.8</project.build.jdk>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.12</junit.version>
+		<!-- springboot -->
+		<springboot.version>1.5.9.RELEASE</springboot.version>
+		<!-- mybatis -->
+		<mybatis.version>3.4.4</mybatis.version>
+		<mybatis-spring.version>1.3.1</mybatis-spring.version>
 	</properties>
 
 	<dependencies>
@@ -21,33 +25,52 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- sptingboot start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<!-- mybatis start -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- mybatis end -->
 	</dependencies>
 	
-	<plugin>
-		<groupId>org.eclipse.m2e</groupId>
-		<artifactId>lifecycle-mapping</artifactId>
-		<version>1.0.0</version>
-		<configuration>
-			<lifecycleMappingMetadata>
-				<pluginExecutions>
-					<pluginExecution>
-						<pluginExecutionFilter>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-resources-plugin</artifactId>
-							<versionRange>[1.2,)</versionRange>
-							<goals>
-								<goal>resources</goal>
-								<goal>testResources</goal>
-							</goals>
-						</pluginExecutionFilter>
-						<action>
-							<ignore/>
-						</action>
-					</pluginExecution>
-				</pluginExecutions>
-			</lifecycleMappingMetadata>
-		</configuration>
-	</plugin>
+	<build>
+		<!-- maven 插件 -->
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+
+		<!-- 配置java版本 -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${project.build.jdk}</source>
+						<target>${project.build.jdk}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 	<organization>
 		<name>安徽富驰信息技术有限公司</name>

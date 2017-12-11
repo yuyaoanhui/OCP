@@ -17,5 +17,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.futuredata.judicature</groupId>
+			<artifactId>CCL-SDK</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
