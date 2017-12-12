@@ -17,7 +17,7 @@ import org.mybatis.generator.api.dom.java.TopLevelClass;
  */
 public class MysqlGenericParadigmPlugin extends PluginAdapter {
 
-  private final static String baseDAO = "com.futuredata.judicature.base.dao.BaseMapper";
+  private static String baseDAO = "";
 
   /**
    * 给dao层mapper类继承BaseMapper增加泛型表达
@@ -47,7 +47,13 @@ public class MysqlGenericParadigmPlugin extends PluginAdapter {
 
   @Override
   public boolean validate(List<String> warnings) {
-    return true;
+    if (getProperties().getProperty("baseDao.path") == null) {
+      warnings.add("mybatis插件：" + this.getClass().getTypeName() + "baseDao.path属性值为空");
+      return false;
+    } else {
+      baseDAO = getProperties().getProperty("baseDao.path");
+      return true;
+    }
   }
 
 }

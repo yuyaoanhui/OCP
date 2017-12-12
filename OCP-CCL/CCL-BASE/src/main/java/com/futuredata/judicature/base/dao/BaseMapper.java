@@ -8,11 +8,20 @@ import com.futuredata.judicature.base.model.BaseModel;
 
 
 /**
- * 基础dao，包含基本增删改查和其他通用方法
+ * 基础dao
+ * <p>
+ * 1.比自动生成的TMapper约定了更多的基础方法
+ * </p>
+ * <p>
+ * 2.用于注入基础service中
+ * </p>
  * 
  * @author yu.yao
  *
  * @param T model对象类型
+ *        <p>
+ *        既可以对应数据库中的物理表，也可能对应一个复杂查询应该返回的结果集
+ *        </p>
  * @param TExample model对应的查询对象类型
  */
 public interface BaseMapper<T extends BaseModel, TExample> {
@@ -54,6 +63,15 @@ public interface BaseMapper<T extends BaseModel, TExample> {
   int insert(T record);
 
   /**
+   * 非空字段插入记录T
+   * 
+   * @author yu.yao
+   * @param record 需要插入的记录
+   * @return 插入条数
+   */
+  int insertSelective(T record);
+
+  /**
    * 根据主键进行更新记录中的全部字段
    * 
    * @author yu.yao
@@ -61,6 +79,15 @@ public interface BaseMapper<T extends BaseModel, TExample> {
    * @return 更新条数
    */
   int updateByPrimaryKey(T record);
+
+  /**
+   * 根据主键进行更新记录中的非null字段
+   * 
+   * @author yu.yao
+   * @param record 需要更新的记录(包含主键)
+   * @return 更新条数
+   */
+  int updateByPrimaryKeySelective(T record);
 
   /**
    * 更新单条记录中满足TExample条件的全部字段
@@ -71,6 +98,15 @@ public interface BaseMapper<T extends BaseModel, TExample> {
    * @return 更新条数
    */
   int updateByExample(@Param("record") T record, @Param("example") TExample example);
+
+  /**
+   * 更新单条记录中满足TExample条件的非null字段
+   * 
+   * @author yu.yao
+   * @param
+   * @return
+   */
+  int updateByExampleSelective(T record, TExample example);
 
   /**
    * 根据id删除<T> model对象
@@ -88,7 +124,7 @@ public interface BaseMapper<T extends BaseModel, TExample> {
    * @param ids 主键列表
    * @return 成功:1,失败:0
    */
-  int deleteByPrimaryKeys(String ids);
+  int deleteByPrimaryKeys(String[] ids);
 
   /**
    * 根据条件删除实体

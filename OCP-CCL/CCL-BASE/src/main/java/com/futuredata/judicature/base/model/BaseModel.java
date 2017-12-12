@@ -6,6 +6,9 @@ import javax.validation.constraints.NotNull;
 
 /**
  * 基础Model类，定义了id并重写了toString()方法
+ * <p>
+ * 作为数据库表的实体类，也可以作为复杂查询结果的返回集类
+ * </p>
  * 
  * @author yu.yao
  *

@@ -3,13 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.futuredata.judicature</groupId>
-		<artifactId>OCP-CCL</artifactId>
+		<artifactId>CCL-MIDDLEWARE</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>CCL-BASE</artifactId>
+
+	<artifactId>data-cache</artifactId>
 	<packaging>jar</packaging>
 
-	<name>CCL-BASE</name>
+	<name>data-cache</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -17,16 +18,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.futuredata.judicature</groupId>
-			<artifactId>CCL-SDK</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.futuredata.judicature</groupId>
-			<artifactId>data-cache</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
+
 </project>
