@@ -11,7 +11,9 @@
 	<packaging>pom</packaging>
 	<name>插件库组织pom文件</name>
 	<modules>
-		<!-- 数据缓存中间件() -->
+		<!-- 数据缓存中间件 -->
 		<module>data-cache</module>
+		<!-- API分发器中间件 -->
+		<module>api-distribute</module>
 	</modules>
 </project>

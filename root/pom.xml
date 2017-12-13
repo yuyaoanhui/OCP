@@ -33,6 +33,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${springboot.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
 		<!-- mybatis start -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

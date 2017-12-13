@@ -1,5 +1,8 @@
 package com.futuredata.judicature.base.exception;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.futuredata.judicature.base.result.ResultCode;
 
 
@@ -22,7 +25,7 @@ import com.futuredata.judicature.base.result.ResultCode;
  *
  */
 public final class FdBizException extends Exception {
-
+  private static final Logger logger = LoggerFactory.getLogger(FdBizException.class);
   /**
    * 序列化ID
    */
@@ -47,6 +50,8 @@ public final class FdBizException extends Exception {
    * 需要输出的业务对象列表
    */
   private Object[] args;
+
+  private String infoJson;
 
   /**
    * 构造一个<B>有堆栈信息</B>、<B>无cause by</B>的基本异常，Throwable默认调用{@link Throwable#fillInStackTrace()}方法爬栈
@@ -139,14 +144,19 @@ public final class FdBizException extends Exception {
     return args;
   }
 
+  public void printInfo() {
+    this.serilizeJson(this.requestId, this.code, this.msg, this.args);
+    logger.error(infoJson);
+  }
+
   private static <T extends ResultCode> String serilizeJson(String requestId, T resultCode) {
     return "{requestId:" + requestId + ",code:" + resultCode.getCode() + ",message:"
         + resultCode.getMsg() + "}";
   }
 
-  @SuppressWarnings("unused")
-  private String serilizeJson(String requestId, int code, String message, Object[] args) {
-    String json = "{requestId:" + requestId + ",code:" + code + ",message:" + message + ",args:";
+  private <T extends ResultCode> void serilizeJson(String requestId, int code, String message,
+      Object[] args) {
+    infoJson = "{requestId:" + requestId + ",code:" + code + ",message:" + message + ",args:";
     if (args != null && args.length > 0) {
       StringBuilder sb = new StringBuilder("[");
       for (int i = 0; i < args.length; i++) {
@@ -157,11 +167,10 @@ public final class FdBizException extends Exception {
           sb.append(",");
         }
       }
-      json = json.concat(sb.toString()).concat("}");
+      infoJson = infoJson.concat(sb.toString()).concat("}");
     } else {
-      json = json.concat("[]}");
+      infoJson = infoJson.concat("[]}");
     }
-    return json;
   }
 
 }
