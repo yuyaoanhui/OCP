@@ -10,7 +10,7 @@
 	<packaging>pom</packaging>
 	<name>插件库组织pom文件</name>
 	<modules>
-		<!-- 插件1() -->
-		<!--<module>PLUGIN-*</module> -->
+		<!-- mybatis generator 代码自动生成插件 -->
+		<module>mybatis-generator-extend</module>
 	</modules>
 </project>

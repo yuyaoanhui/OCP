@@ -3,14 +3,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.futuredata.judicature</groupId>
-		<artifactId>PRODUCT</artifactId>
+		<artifactId>INSIDE</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>INSIDE</artifactId>
-	<packaging>pom</packaging>
-	<name>内部产品族组织pom文件</name>
-	<modules>
-		<!-- 架构改造测试工程 -->
-		<module>architecture</module>
-	</modules>
+	<artifactId>architecture</artifactId>
+	<packaging>jar</packaging>
+
+	<name>architecture</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+	</dependencies>
 </project>

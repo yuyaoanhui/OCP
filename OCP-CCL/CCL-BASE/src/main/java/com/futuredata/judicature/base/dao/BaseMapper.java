@@ -135,4 +135,22 @@ public interface BaseMapper<T extends BaseModel, TExample> {
    */
   int deleteByExample(TExample example);
 
+  /**
+   * 批量插入(全字段)
+   * 
+   * @author yu.yao
+   * @param
+   * @return
+   */
+  int insertBatch(List<T> list);
+
+  /**
+   * 批量插入(非null字段)
+   * 
+   * @author yu.yao
+   * @param
+   * @return
+   */
+  int insertSelectiveBatch(List<T> list);
+
 }

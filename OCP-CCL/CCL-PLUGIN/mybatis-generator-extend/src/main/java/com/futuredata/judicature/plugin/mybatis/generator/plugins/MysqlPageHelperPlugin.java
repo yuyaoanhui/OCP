@@ -1,4 +1,4 @@
-package com.futuredata.judicature.plugin.mybatis.generator.extend;
+package com.futuredata.judicature.plugin.mybatis.generator.plugins;
 
 import java.util.List;
 

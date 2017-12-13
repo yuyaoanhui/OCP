@@ -153,7 +153,6 @@ public class JavaElementGeneratorTools {
     if (introspectedTable.getRules().generateRecordWithBLOBsClass()) {
       type = new FullyQualifiedJavaType(introspectedTable.getRecordWithBLOBsType());
     } else {
-      // the blob fields must be rolled up into the base class
       type = new FullyQualifiedJavaType(introspectedTable.getBaseRecordType());
     }
     return type;
