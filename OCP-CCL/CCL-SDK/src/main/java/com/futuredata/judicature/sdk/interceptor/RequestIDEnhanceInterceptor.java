@@ -1,4 +1,4 @@
-package com.futuredata.judicature.sdk.utils.interceptor;
+package com.futuredata.judicature.sdk.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 

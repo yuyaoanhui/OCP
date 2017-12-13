@@ -1,4 +1,4 @@
-package com.futuredata.judicature.sdk.utils.annoation;
+package com.futuredata.judicature.sdk.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
