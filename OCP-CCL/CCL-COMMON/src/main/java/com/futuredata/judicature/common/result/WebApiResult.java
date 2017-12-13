@@ -25,6 +25,28 @@ public class WebApiResult<T> implements Serializable {
     this.msg = CommonResultCode.SYS_SUCCESS.getMsg();
   }
 
+  /**
+   * 无数据返回码
+   * 
+   * @param rc
+   */
+  public WebApiResult(ResultCode rc) {
+    this.code = rc.getCode();
+    this.msg = rc.getMsg();
+  }
+
+  /**
+   * 有数据返回码
+   * 
+   * @param rc
+   * @param data
+   */
+  public WebApiResult(ResultCode rc, T data) {
+    this.code = rc.getCode();
+    this.msg = rc.getMsg();
+    this.data = data;
+  }
+
   public int getCode() {
     return code;
   }

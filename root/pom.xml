@@ -38,6 +38,13 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 			<version>${springboot.version}</version>
 		</dependency>
+		<!-- Springboot 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${springboot.version}</version>
+			<optional>true</optional>
+		</dependency>
 		<!-- mybatis start -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
