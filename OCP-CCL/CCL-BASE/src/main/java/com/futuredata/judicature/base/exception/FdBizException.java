@@ -25,6 +25,7 @@ import com.futuredata.judicature.base.result.ResultCode;
  *
  */
 public final class FdBizException extends Exception {
+
   private static final Logger logger = LoggerFactory.getLogger(FdBizException.class);
   /**
    * 序列化ID
@@ -51,6 +52,9 @@ public final class FdBizException extends Exception {
    */
   private Object[] args;
 
+  /**
+   * 需要手动打印的信息
+   */
   private String infoJson;
 
   /**
@@ -86,7 +90,7 @@ public final class FdBizException extends Exception {
   }
 
   /**
-   * 构造一个<B>无堆栈信息</B>的基本异常(此方法关闭了爬栈开关，可以提高抛出异常的性能).
+   * 构造一个<B>有堆栈信息</B>、<B>无cause by</B>的基本异常(此方法关闭了爬栈开关，可以提高抛出异常的性能).
    * <p>
    * 此方法即使没有捕获到异常也可以根据业务逻辑灵活选择抛出
    * </p>

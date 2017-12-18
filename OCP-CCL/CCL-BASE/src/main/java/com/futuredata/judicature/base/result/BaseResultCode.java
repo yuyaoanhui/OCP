@@ -15,6 +15,7 @@ public class BaseResultCode {
   public static final ResultCode SYS_UPDATE_FAIL = new ResultCode(1004, "修改数据失败");
   public static final ResultCode SYS_DELETE_FAIL = new ResultCode(1005, "删除数据失败");
   public static final ResultCode SYS_QUERY_FAIL = new ResultCode(1006, "查询数据失败");
+  public static final ResultCode SYS_REFLECT_ERROR = new ResultCode(1007, "方法反射出错");
   public static final ResultCode SYS_ERROR = new ResultCode(1099, "系统发生未知错误");
 
   /**

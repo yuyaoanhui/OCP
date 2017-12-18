@@ -2,7 +2,13 @@ package com.futuredata.judicature.base.model;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
+
 import javax.validation.constraints.NotNull;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.futuredata.judicature.base.result.BaseResultCode;
 
 /**
  * 基础Model类，定义了id并重写了toString()方法
@@ -15,6 +21,7 @@ import javax.validation.constraints.NotNull;
  */
 public class BaseModel implements Serializable {
 
+  private static final Logger logger = LoggerFactory.getLogger(BaseModel.class);
   private static final long serialVersionUID = 1L;
 
   @NotNull
@@ -40,17 +47,14 @@ public class BaseModel implements Serializable {
       for (Method m : c.getMethods()) {
         if (m.getName().startsWith("get") && m.getName().length() > 3
             && m.getParameterTypes().length == 0 && !"getClass".endsWith(m.getName())) {
-          try {
-            sb.append("," + m.getName().substring(3, 4).toLowerCase() + m.getName().substring(4)
-                + ":" + m.invoke(this));
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
+          sb.append("," + m.getName().substring(3, 4).toLowerCase() + m.getName().substring(4) + ":"
+              + m.invoke(this));
         }
       }
       sb.append("}");
     } catch (Exception e) {
-      e.printStackTrace();
+      logger.error(BaseResultCode.SYS_REFLECT_ERROR.getMsg(), e);
+      return null;
     }
     return sb.toString();
   }

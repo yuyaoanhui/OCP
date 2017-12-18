@@ -34,8 +34,7 @@ public abstract class AbstractBaseService<T extends BaseModel, TExample>
   @Override
   public String save(T t, boolean notNull) throws FdBizException {
     if (t == null) {
-      throw new FdBizException("request id", BaseResultCode.SYS_PARAM_NULL, new Object[] {t},
-          new IllegalAccessException());
+      throw new FdBizException("request id", BaseResultCode.SYS_PARAM_NULL, new Object[] {t});
     }
     String id = t.getId();
     if (StringUtils.isEmpty(id)) {
