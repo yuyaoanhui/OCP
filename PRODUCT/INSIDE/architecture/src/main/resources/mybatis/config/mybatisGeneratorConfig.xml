@@ -9,16 +9,16 @@
 
 	<context id="MySqlTables" targetRuntime="MyBatis3">
 		<plugin
-			type="com.futuredata.judicature.plugin.mybatis.generator.plugins.MysqlBatchInsertPlugin"></plugin>
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlBatchInsertPlugin"></plugin>
 		<plugin
-			type="com.futuredata.judicature.plugin.mybatis.generator.plugins.MysqlGenericParadigmPlugin"></plugin>
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlGenericParadigmPlugin"></plugin>
 		<plugin
-			type="com.futuredata.judicature.plugin.mybatis.generator.plugins.MysqlSerializablePlugin"></plugin>
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlSerializablePlugin"></plugin>
 		<plugin
-			type="com.futuredata.judicature.plugin.mybatis.generator.plugins.MysqlPageHelperPlugin"></plugin>
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlPageHelperPlugin"></plugin>
 
 		<commentGenerator
-			type="com.futuredata.judicature.plugin.mybatis.generator.extend.MybaitsCommentGeneratorExtend">
+			type="com.ocp.plugin.mybatis.generator.extend.MybaitsCommentGeneratorExtend">
 			<property name="suppressDate" value="true" />
 		</commentGenerator>
 
@@ -29,7 +29,7 @@
 		<javaModelGenerator targetPackage="${model.package}"
 			targetProject="${target.project}">
 			<property name="rootClass"
-				value="com.futuredata.judicature.base.model.BaseModel" />
+				value="com.ocp.base.model.BaseModel" />
 		</javaModelGenerator>
 
 		<!--生成xml mapper文件 路径 -->

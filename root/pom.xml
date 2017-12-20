@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.futuredata.judicature</groupId>
+	<groupId>com.ocp</groupId>
 	<artifactId>root</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -97,7 +97,7 @@
 	</build>
 
 	<organization>
-		<name>安徽富驰信息技术有限公司</name>
-		<url>http://www.future-data.cn/</url>
+		<name>能力开放——开源平台</name>
+		<url>https://github.com/yuyaoanhui/OCP.git</url>
 	</organization>
 </project>
