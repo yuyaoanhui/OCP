@@ -12,5 +12,7 @@
 	<modules>
 		<!-- mybatis generator 代码自动生成插件 -->
 		<module>mybatis-generator-extend</module>
+		<!-- elasticsearch analysis ansj es分词插件 -->
+		<module>elasticsearch-analysis-ansj-2.4.1</module>
 	</modules>
 </project>
