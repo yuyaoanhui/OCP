@@ -15,5 +15,7 @@
 		<module>data-cache</module>
 		<!-- API分发器中间件 -->
 		<module>api-distribute</module>
+		<!-- API分发器中间件 -->
+		<module>elasticsearch-2.4.1</module>
 	</modules>
 </project>
