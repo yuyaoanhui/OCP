@@ -10,5 +10,7 @@
 	<packaging>pom</packaging>
 	<name>自然语言处理工程组织pom文件</name>
 	<modules>
+		<!-- ansj开源java中文分词组件 -->
+		<module>ansj_seg-5.0.1</module>
 	</modules>
 </project>

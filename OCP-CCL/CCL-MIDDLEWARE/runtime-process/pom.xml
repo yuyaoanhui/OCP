@@ -3,12 +3,21 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ocp</groupId>
-		<artifactId>OCP-BSP</artifactId>
+		<artifactId>CCL-MIDDLEWARE</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>BSP-TPC</artifactId>
-	<packaging>pom</packaging>
-	<name>内部通信平台工程组织pom文件</name>
-	<modules>
-	</modules>
+
+	<artifactId>runtime-process</artifactId>
+	<packaging>jar</packaging>
+
+	<name>runtime-process</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
 </project>

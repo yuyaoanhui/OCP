@@ -10,5 +10,7 @@
 	<packaging>pom</packaging>
 	<name>图像视频视觉处理工程组织pom文件</name>
 	<modules>
+		<!-- 基于ocr引擎封装的JNI -->
+		<module>ocr-jni</module>
 	</modules>
 </project>
