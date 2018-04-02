@@ -8,10 +8,10 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>api-distribute</artifactId>
+	<artifactId>api-dispatch</artifactId>
 	<packaging>jar</packaging>
 
-	<name>api-distribute</name>
+	<name>api-dispatch</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

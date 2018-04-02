@@ -14,7 +14,7 @@
 		<!-- 数据缓存中间件 -->
 		<module>data-cache</module>
 		<!-- API分发器中间件 -->
-		<module>api-distribute</module>
+		<module>api-dispatch</module>
 		<!-- ES中间件 -->
 		<module>elasticsearch-2.4.1</module>
 		<!-- JVM-服务器：指令中间件 -->

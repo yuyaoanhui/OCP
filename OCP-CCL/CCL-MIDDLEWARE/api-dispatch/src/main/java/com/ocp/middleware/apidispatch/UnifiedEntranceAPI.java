@@ -1,4 +1,4 @@
-package com.ocp.middleware.apidistribute;
+package com.ocp.middleware.apidispatch;
 
 /**
  * 所有web请求的统一入口
