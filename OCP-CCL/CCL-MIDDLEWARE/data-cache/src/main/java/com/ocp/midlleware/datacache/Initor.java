@@ -1,4 +1,4 @@
-package com.ocp.midlleware.data.cache;
+package com.ocp.midlleware.datacache;
 
 /**
  * 内存缓存的管理接口

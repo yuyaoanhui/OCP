@@ -1,4 +1,4 @@
-package com.ocp.midlleware.data.cache;
+package com.ocp.midlleware.datacache;
 
 import java.util.HashMap;
 import java.util.Map;
