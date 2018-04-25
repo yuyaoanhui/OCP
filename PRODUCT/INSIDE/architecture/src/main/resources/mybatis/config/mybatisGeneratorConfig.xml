@@ -43,7 +43,7 @@
 		</javaClientGenerator>
 
 		<!--对应数据库表名 -->
-		<table schema="" tableName="act_hi_taskinst" domainObjectName="TaskInstance">
+		<table schema="" tableName="test" domainObjectName="TaskInstance">
 		</table>
 	</context>
 </generatorConfiguration>
