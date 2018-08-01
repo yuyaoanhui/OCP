@@ -3,7 +3,7 @@ package com.ocp.base.result;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.ocp.base.exception.FdBizException;
+import com.ocp.base.exception.BizException;
 import com.ocp.sdk.utils.StringUtils;
 
 /**
@@ -32,7 +32,7 @@ public class ResultCode {
    * 校验是否有重复定义的返回码
    * </p>
    * 
-   * @throws FdBizException
+   * @throws BizException
    */
   public ResultCode(int code, String msg) {
     if (code == 0) {

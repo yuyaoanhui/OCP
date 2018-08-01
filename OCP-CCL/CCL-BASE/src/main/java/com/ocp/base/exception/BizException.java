@@ -24,9 +24,9 @@ import com.ocp.base.result.ResultCode;
  * @author yu.yao
  *
  */
-public final class FdBizException extends Exception {
+public final class BizException extends Exception {
 
-  private static final Logger logger = LoggerFactory.getLogger(FdBizException.class);
+  private static final Logger logger = LoggerFactory.getLogger(BizException.class);
   /**
    * 序列化ID
    */
@@ -64,7 +64,7 @@ public final class FdBizException extends Exception {
    * @param resultCode 错误码
    * @param args 需要输出的业务对象列表
    */
-  public <T extends ResultCode> FdBizException(String requestId, T resultCode, Object[] args) {
+  public <T extends ResultCode> BizException(String requestId, T resultCode, Object[] args) {
     super(serilizeJson(requestId, resultCode), null, false, true);
     this.requestId = requestId;
     this.code = resultCode.getCode();
@@ -80,7 +80,7 @@ public final class FdBizException extends Exception {
    * @param args 需要输出的业务对象列表
    * @param t 被捕获到的异常
    */
-  public <T extends ResultCode> FdBizException(String requestId, T resultCode, Object[] args,
+  public <T extends ResultCode> BizException(String requestId, T resultCode, Object[] args,
       Throwable t) {
     super(serilizeJson(requestId, resultCode), t);
     this.requestId = requestId;
@@ -97,7 +97,7 @@ public final class FdBizException extends Exception {
    * 
    * @param resultCode 错误码
    */
-  public <T extends ResultCode> FdBizException(T resultCode) {
+  public <T extends ResultCode> BizException(T resultCode) {
     super(serilizeJson(null, resultCode), null, false, true);
     this.code = resultCode.getCode();
     this.msg = resultCode.getMsg();
@@ -111,7 +111,7 @@ public final class FdBizException extends Exception {
    * 
    * @param msg 要输出的信息
    */
-  public FdBizException(String msg) {
+  public BizException(String msg) {
     super(msg, null, false, false);
     this.msg = msg;
   }

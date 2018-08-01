@@ -1,7 +1,7 @@
 package com.ocp.base.service;
 
 import java.util.List;
-import com.ocp.base.exception.FdBizException;
+import com.ocp.base.exception.BizException;
 import com.ocp.base.model.BaseModel;
 
 /**
@@ -19,7 +19,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param notNull 是否排除空字段
    * @return id
    */
-  String save(T t, boolean notNull) throws FdBizException;
+  String save(T t, boolean notNull) throws BizException;
 
   /**
    * 修改实体
@@ -29,7 +29,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param notNull 是否排除空字段
    * @return
    */
-  boolean modify(T t, boolean notNull) throws FdBizException;
+  boolean modify(T t, boolean notNull) throws BizException;
 
   /**
    * 根据id删除
@@ -38,7 +38,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  boolean deleteById(String id) throws FdBizException;
+  boolean deleteById(String id) throws BizException;
 
   /**
    * 根据id列表批量删除
@@ -47,7 +47,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  boolean deleteByIds(String[] ids) throws FdBizException;
+  boolean deleteByIds(String[] ids) throws BizException;
 
   /**
    * 根据id找到对应的一条记录
@@ -56,7 +56,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  T queryOneById(String id) throws FdBizException;
+  T queryOneById(String id) throws BizException;
 
   /**
    * 根据id列表找到对应的多条记录
@@ -65,7 +65,7 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  T queryListByIds(String[] ids) throws FdBizException;
+  T queryListByIds(String[] ids) throws BizException;
 
   /**
    * 根据example找到符合条件的记录列表
@@ -74,5 +74,5 @@ public interface IBaseService<T extends BaseModel, TExample> {
    * @param
    * @return
    */
-  List<T> queryList(TExample example) throws FdBizException;
+  List<T> queryList(TExample example) throws BizException;
 }
