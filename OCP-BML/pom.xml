@@ -10,5 +10,7 @@
 	<packaging>pom</packaging>
 	<name>业务模型库工程组织pom文件</name>
 	<modules>
+		<!-- 智能体定义 -->
+		<module>BML-AGENT</module>
 	</modules>
 </project>
