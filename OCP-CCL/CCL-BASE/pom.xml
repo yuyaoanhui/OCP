@@ -13,7 +13,16 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<project.build.jdk>1.8</project.build.jdk>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.12</junit.version>
+		<!-- springboot -->
+		<springboot.version>1.5.9.RELEASE</springboot.version>
+		<!-- mybatis -->
+		<mybatis.version>3.4.4</mybatis.version>
+		<mybatis-spring.version>1.3.1</mybatis-spring.version>
+		<!-- AOP -->
+		<aspectj.version>1.8.10</aspectj.version>
 	</properties>
 
 	<dependencies>
@@ -22,11 +31,59 @@
 			<artifactId>CCL-SDK</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.ocp</groupId>
 			<artifactId>data-cache</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<!-- sptingboot start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<version>${springboot.version}</version>
+		</dependency>
+		<!-- Springboot 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>${springboot.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<!-- mybatis start -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- mybatis end -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
 		</dependency>
 	</dependencies>
 </project>

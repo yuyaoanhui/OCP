@@ -15,11 +15,11 @@
 		<module>data-cache</module>
 		<!-- API分发器中间件 -->
 		<module>api-dispatch</module>
-		<!-- API分发器中间件 -->
+		<!-- 信息抽取中间件 -->
 		<module>extract-info</module>
 		<!-- ES中间件 -->
 		<module>elasticsearch-2.4.1</module>
 		<!-- JVM-服务器：指令中间件 -->
-		<module>runtime-process</module>
+		<module>runtime-jni</module>
 	</modules>
 </project>

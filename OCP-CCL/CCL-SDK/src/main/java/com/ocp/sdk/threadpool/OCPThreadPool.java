@@ -6,6 +6,6 @@ package com.ocp.sdk.threadpool;
  * @author yu.yao
  *
  */
-public interface FdThreadPool {
+public interface OCPThreadPool {
 
 }
