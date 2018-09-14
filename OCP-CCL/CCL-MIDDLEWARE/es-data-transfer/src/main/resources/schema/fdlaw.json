@@ -1,0 +1,57 @@
+{
+	"settings": {
+		"index": {
+			"number_of_shards": 3,
+			"number_of_replicas": 1,
+			"mapping.total_fields.limit":100000
+		},
+		"index.mapper.dynamic": true,
+		"analysis": {
+			"filter": {
+				"bigram_filter": {
+					"type": "shingle",
+					"min_shingle_size": 2,
+					"max_shingle_size": 2,
+					"output_unigrams": false
+				}
+			}
+		}
+	},
+	"mappings": {
+		"law": {
+			"_all": {
+				"enabled": false
+			},
+			"properties": {
+				"lawId": {
+					"type": "keyword"
+				},
+				"executeDate": {
+					"format": "yyyy-MM-dd",
+					"type": "date"
+				},
+				"lawName": {
+					"type": "text",
+					"analyzer": "index_ansj"
+				},
+				"forceGrade": {
+					"type": "keyword"
+				},
+				"publicDate": {
+					"format": "yyyy-MM-dd",
+					"type": "date"
+				},
+				"content": {
+					"type": "text",
+					"analyzer": "index_ansj"
+				},
+				"hbaseRowkey": {
+					"type": "keyword"
+				},
+				"publicDepartment": {
+					"type": "keyword"
+				}
+			}
+		}
+	}
+}

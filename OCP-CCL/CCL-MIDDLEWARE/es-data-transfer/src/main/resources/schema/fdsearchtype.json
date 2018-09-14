@@ -1,0 +1,26 @@
+{
+    "settings": {
+        "number_of_shards": 6,  
+        "number_of_replicas": 1,
+        "index.mapper.dynamic": true,
+		"index.mapping.total_fields.limit": 100000
+    },
+    "mappings": {
+      "linksearch": {
+        "properties": {
+          "searchtype": {
+            "type": "keyword"
+          },
+          "searchcontent": {
+            "type": "keyword"
+          },
+          "searchweight": {
+            "type": "long"
+          },
+          "caseId": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+}

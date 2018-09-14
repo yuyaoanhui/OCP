@@ -1,0 +1,3541 @@
+{
+	"settings": {
+
+		"index.mapping.total_fields.limit": 100000,
+		"index.mapping.nested_fields.limit": 10000,
+		"index": {
+			"number_of_shards": "6",
+			"mapper": {
+				"dynamic": true
+			},
+			"analysis": {
+				"filter": {
+					"bigram_filter": {
+						"max_shingle_size": "2",
+						"min_shingle_size": "2",
+						"output_unigrams": "false",
+						"type": "shingle"
+					}
+				}
+			},
+			"number_of_replicas": "0"
+		}
+
+	},
+	"mappings": {
+		"lawdoc": {
+			"_all": {
+				"enabled": false
+			},
+			"properties": {
+				"交通肇事罪": {
+					"properties": {
+						"section_落款_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_嫌疑人_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_当事人关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"sourcePersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"relations": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								}
+							}
+						},
+						"判决书": {
+							"type": "boolean"
+						},
+						"meta_审理程序类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院_区县": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害物品分类": {
+							"type": "keyword"
+						},
+						"caseId": {
+							"type": "keyword"
+						},
+						"section_事实构成2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_案发时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_文书名称": {
+							"type": "keyword"
+						},
+						"id": {
+							"type": "keyword"
+						},
+						"section_办案风险评估及预案": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_判决类型": {
+							"type": "keyword"
+						},
+						"meta_发布时间": {
+							"type": "keyword"
+						},
+						"section_落款_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发回重审": {
+							"type": "boolean"
+						},
+						"section_文书尾部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_积极施救": {
+							"type": "boolean"
+						},
+						"section_经审查认定的案件事实及证据_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_事实构成_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_案件类型": {
+							"type": "keyword"
+						},
+						"meta_书记员": {
+							"type": "keyword"
+						},
+						"info_第一次犯案时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"section_判决主文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款": {
+							"type": "keyword"
+						},
+						"meta_文书类型_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款索引": {
+							"type": "keyword"
+						},
+						"info_被告不在场": {
+							"type": "boolean"
+						},
+						"section_其他2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_血液酒精浓度": {
+							"type": "double"
+						},
+						"info_车辆不安全": {
+							"type": "boolean"
+						},
+						"section_犯罪嫌疑人基本情况_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院层级": {
+							"type": "keyword"
+						},
+						"meta_判决层级": {
+							"type": "keyword"
+						},
+						"info_高速路危险驾驶": {
+							"type": "boolean"
+						},
+						"meta_审判员": {
+							"type": "keyword"
+						},
+						"起诉书": {
+							"type": "boolean"
+						},
+						"section_其他": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书记录日期": {
+							"type": "keyword"
+						},
+						"info_犯罪时长": {
+							"type": "long"
+						},
+						"meta_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_人物信息": {
+							"include_in_parent": true,
+							"type": "nested",
+							"properties": {
+								"pnameType": {
+									"type": "long"
+								},
+								"ptypes": {
+									"type": "keyword"
+								},
+								"peopleAttrMap": {
+									"type": "nested",
+									"properties": {
+										"info_缓刑月数": {
+											"type": "double"
+										},
+										"info_重大财产损失": {
+											"type": "boolean"
+										},
+										"info_孕妇": {
+											"type": "boolean"
+										},
+										"info_退赃退赔": {
+											"type": "boolean"
+										},
+										"info_身份证号码": {
+											"type": "keyword"
+										},
+										"info_主刑月数": {
+											"type": "double"
+										},
+										"info_民族": {
+											"type": "keyword"
+										},
+										"info_从重": {
+											"type": "boolean"
+										},
+										"info_教育程度": {
+											"type": "keyword"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"info_性别": {
+											"type": "keyword"
+										},
+										"info_自首": {
+											"type": "boolean"
+										},
+										"judgmentTime": {
+											"type": "double"
+										},
+										"info_预备犯": {
+											"type": "boolean"
+										},
+										"info_出生地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_理由": {
+											"type": "keyword"
+										},
+										"info_当事人所有地位": {
+											"type": "keyword"
+										},
+										"info_有期徒刑以上刑": {
+											"type": "boolean"
+										},
+										"judgmentName": {
+											"type": "keyword"
+										},
+										"info_从犯": {
+											"type": "boolean"
+										},
+										"info_归案情况": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_法院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_居住地址_分类": {
+											"type": "keyword"
+										},
+										"info_建议不批准逮捕": {
+											"type": "boolean"
+										},
+										"info_第一次犯案时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_逮捕理由分类": {
+											"type": "keyword"
+										},
+										"info_因逃逸致人死亡": {
+											"type": "boolean"
+										},
+										"info_盲人": {
+											"type": "boolean"
+										},
+										"info_行政级别分类": {
+											"type": "keyword"
+										},
+										"info_14_18周岁": {
+											"type": "boolean"
+										},
+										"info_逮捕理由": {
+											"type": "keyword"
+										},
+										"info_如实供述": {
+											"type": "boolean"
+										},
+										"info_刑事和解": {
+											"type": "boolean"
+										},
+										"info_政府事业单位分类": {
+											"type": "keyword"
+										},
+										"info_吸食毒品后驾驶机动车辆": {
+											"type": "boolean"
+										},
+										"info_罚金数额": {
+											"type": "double"
+										},
+										"info_防卫过当": {
+											"type": "boolean"
+										},
+										"info_教唆犯": {
+											"type": "boolean"
+										},
+										"info_犯罪时长": {
+											"type": "long"
+										},
+										"info_团伙": {
+											"type": "boolean"
+										},
+										"info_精神病人": {
+											"type": "boolean"
+										},
+										"info_职业_分类": {
+											"type": "keyword"
+										},
+										"info_从轻": {
+											"type": "boolean"
+										},
+										"info_公安局取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_判罚理由": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_事故责任划分": {
+											"type": "keyword"
+										},
+										"info_立功": {
+											"type": "boolean"
+										},
+										"info_又聋又哑或盲人": {
+											"type": "boolean"
+										},
+										"info_认罪": {
+											"type": "boolean"
+										},
+										"info_居住地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_未遂犯": {
+											"type": "boolean"
+										},
+										"info_职业": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_重刑理由": {
+											"type": "keyword"
+										},
+										"info_不逮捕理由分类": {
+											"type": "keyword"
+										},
+										"judgmentType": {
+											"type": "keyword"
+										},
+										"info_悔罪": {
+											"type": "boolean"
+										},
+										"info_又聋又哑": {
+											"type": "boolean"
+										},
+										"info_主刑罪名": {
+											"type": "keyword"
+										},
+										"info_前科罪名": {
+											"type": "keyword"
+										},
+										"info_建议批准逮捕": {
+											"type": "boolean"
+										},
+										"info_当事人地位": {
+											"type": "keyword"
+										},
+										"info_避险过当": {
+											"type": "boolean"
+										},
+										"info_户籍地址_分类": {
+											"type": "keyword"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"info_胁从犯": {
+											"type": "boolean"
+										},
+										"info_酒驾": {
+											"type": "boolean"
+										},
+										"info_决定刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_出生地址_分类": {
+											"type": "keyword"
+										},
+										"info_拘传时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_初犯偶犯": {
+											"type": "boolean"
+										},
+										"info_谅解": {
+											"type": "boolean"
+										},
+										"info_前科": {
+											"type": "boolean"
+										},
+										"info_党派": {
+											"type": "keyword"
+										},
+										"info_流窜作案": {
+											"type": "boolean"
+										},
+										"info_被胁迫参加犯罪": {
+											"type": "boolean"
+										},
+										"info_检察院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_重伤人数": {
+											"type": "long"
+										},
+										"info_中止犯": {
+											"type": "boolean"
+										},
+										"info_积极赔偿": {
+											"type": "boolean"
+										},
+										"info_职业_分类_TDH": {
+											"type": "keyword"
+										},
+										"info_羁押情况": {
+											"properties": {
+												"dateArrestEnforcement": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateFirstCustody": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateCapture": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateArrestOpinion": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateBailCourt": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateBailProcuratorate": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateDetentionEnforcement": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateDetentionOpinion": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												}
+											}
+										},
+										"judgmentNameSize": {
+											"type": "long"
+										},
+										"info_逃逸": {
+											"type": "boolean"
+										},
+										"info_年龄": {
+											"type": "long"
+										},
+										"info_执行逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_户籍地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_满75周岁": {
+											"type": "boolean"
+										},
+										"info_出生日期": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_无能力赔偿": {
+											"type": "boolean"
+										},
+										"info_决定逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_抓获时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_既遂犯": {
+											"type": "boolean"
+										},
+										"info_教唆未成年人犯罪": {
+											"type": "boolean"
+										},
+										"info_死亡人数": {
+											"type": "long"
+										},
+										"info_进行抢救": {
+											"type": "boolean"
+										},
+										"info_不逮捕理由": {
+											"type": "keyword"
+										},
+										"info_一般累犯": {
+											"type": "boolean"
+										},
+										"info_判罚类型": {
+											"type": "keyword"
+										},
+										"info_无证驾驶": {
+											"type": "boolean"
+										},
+										"info_逮捕或拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_首要分子": {
+											"type": "boolean"
+										},
+										"combinedResults": {
+											"type": "boolean"
+										},
+										"info_工作单位": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_社会危害性": {
+											"type": "boolean"
+										},
+										"info_坦白": {
+											"type": "boolean"
+										},
+										"info_主犯": {
+											"type": "boolean"
+										},
+										"info_组织机构代码": {
+											"type": "keyword"
+										},
+										"info_执行刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_轻刑理由": {
+											"type": "keyword"
+										},
+										"info_监视居住时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										}
+									}
+								},
+								"pname": {
+									"type": "keyword"
+								},
+								"recordlist": {
+									"properties": {
+										"prisonDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"police": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceTime": {
+											"type": "double"
+										},
+										"criminalRecordName": {
+											"type": "keyword"
+										},
+										"judgeDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"releaseDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"court": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceType": {
+											"type": "keyword"
+										}
+									}
+								},
+								"index": {
+									"type": "long"
+								},
+								"ptype": {
+									"type": "keyword"
+								}
+							}
+						},
+						"meta_案件来源": {
+							"type": "keyword"
+						},
+						"section_需要说明的问题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_开庭情况": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_社会危险性分析": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_全文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判要点": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布法院": {
+							"type": "keyword"
+						},
+						"section_事实构成": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_律所": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_审查逮捕意见书": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_被告": {
+							"type": "keyword"
+						},
+						"section_标题_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_aydm": {
+							"type": "keyword"
+						},
+						"meta_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害场所分类": {
+							"type": "keyword"
+						},
+						"meta_审判长": {
+							"type": "keyword"
+						},
+						"meta_检察院_市": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_提起公诉时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_检察院_省": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判结果": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_造成人员死亡": {
+							"type": "boolean"
+						},
+						"meta_案由": {
+							"type": "keyword"
+						},
+						"section_理由_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_人物关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "keyword"
+								},
+								"sourcePersonName": {
+									"type": "keyword"
+								},
+								"relations": {
+									"type": "keyword"
+								}
+							}
+						},
+						"section_处理意见_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_关联案号": {
+							"type": "keyword"
+						},
+						"meta_落款日期_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_律师": {
+							"type": "keyword"
+						},
+						"meta_案件受理费总额": {
+							"type": "double"
+						},
+						"meta_法院名称": {
+							"type": "keyword"
+						},
+						"meta_案例编号": {
+							"type": "keyword"
+						},
+						"info_重伤人数": {
+							"type": "long"
+						},
+						"meta_案件受理费": {
+							"properties": {
+								"feepart": {
+									"type": "double"
+								},
+								"names": {
+									"type": "keyword"
+								},
+								"pt": {
+									"type": "keyword"
+								},
+								"share": {
+									"type": "double"
+								},
+								"feeCourt": {
+									"type": "double"
+								}
+							}
+						},
+						"meta_关键词": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_关联文书": {
+							"properties": {
+								"meta_案件名称": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"meta_案号": {
+									"type": "keyword"
+								},
+								"meta_文书名称": {
+									"type": "keyword"
+								},
+								"meta_法院名称": {
+									"type": "keyword"
+								},
+								"meta_裁判日期": {
+									"format": "strict_date_optional_time||epoch_millis",
+									"type": "date"
+								}
+							}
+						},
+						"meta_检察业务类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_出庭检察官": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_侦查机关名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_承办人": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"审查逮捕意见书": {
+							"type": "boolean"
+						},
+						"section_落款": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_超载": {
+							"type": "boolean"
+						},
+						"meta_法院_市": {
+							"type": "keyword"
+						},
+						"info_死亡人数": {
+							"type": "long"
+						},
+						"meta_法院_省": {
+							"type": "keyword"
+						},
+						"meta_裁判理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号": {
+							"type": "keyword"
+						},
+						"meta_判决书名字": {
+							"type": "keyword"
+						},
+						"section_文书首部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_级别": {
+							"type": "keyword"
+						},
+						"section_处理意见_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_造成恶劣影响": {
+							"type": "boolean"
+						},
+						"meta_检察院名称": {
+							"type": "keyword"
+						},
+						"meta_嫌疑人_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_区县": {
+							"type": "keyword"
+						},
+						"meta_裁判日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_基本案情": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"info_无牌证或已报废": {
+							"type": "boolean"
+						},
+						"info_案发时间小时": {
+							"type": "long"
+						},
+						"section_受案和审查过程": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"time": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件结果": {
+							"type": "keyword"
+						},
+						"section_判决主文2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_原告": {
+							"type": "keyword"
+						}
+					}
+				},
+				"盗窃罪": {
+					"properties": {
+						"section_事实构成_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_嫌疑人_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_发案、立案、破案经过_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_案情简要_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_不批准逮捕的理由_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_审理程序类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院_区县": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"caseId": {
+							"type": "keyword"
+						},
+						"section_事实构成2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_案发时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_文书名称": {
+							"type": "keyword"
+						},
+						"section_案情简要_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_判决类型": {
+							"type": "keyword"
+						},
+						"section_落款_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发回重审": {
+							"type": "boolean"
+						},
+						"meta_文书类型_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_案件类型": {
+							"type": "keyword"
+						},
+						"meta_书记员": {
+							"type": "keyword"
+						},
+						"ssection_事实构成_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款索引": {
+							"type": "keyword"
+						},
+						"section_其他2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_其他_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院层级": {
+							"type": "keyword"
+						},
+						"meta_判决层级": {
+							"type": "keyword"
+						},
+						"section_文书首部_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_特殊地点盗窃": {
+							"type": "boolean"
+						},
+						"meta_审判员": {
+							"type": "keyword"
+						},
+						"section_标题_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_其他": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_犯罪时长": {
+							"type": "long"
+						},
+						"pos": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_人物信息": {
+							"include_in_parent": true,
+							"type": "nested",
+							"properties": {
+								"pnameType": {
+									"type": "long"
+								},
+								"ptypes": {
+									"type": "keyword"
+								},
+								"peopleAttrMap": {
+									"type": "nested",
+									"properties": {
+										"info_缓刑月数": {
+											"type": "double"
+										},
+										"非主从犯": {
+											"type": "boolean"
+										},
+										"info_退赃退赔": {
+											"type": "boolean"
+										},
+										"info_有期徒刑以下刑": {
+											"type": "boolean"
+										},
+										"info_身份证号码": {
+											"type": "keyword"
+										},
+										"info_主刑月数": {
+											"type": "double"
+										},
+										"info_盗窃总次数": {
+											"type": "long"
+										},
+										"info_民族": {
+											"type": "keyword"
+										},
+										"info_从重": {
+											"type": "boolean"
+										},
+										"info_教育程度": {
+											"type": "keyword"
+										},
+										"info_侵害物品分类": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"info_性别": {
+											"type": "keyword"
+										},
+										"info_执行机关": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_自首": {
+											"type": "boolean"
+										},
+										"judgmentTime": {
+											"type": "double"
+										},
+										"info_预备犯": {
+											"type": "boolean"
+										},
+										"info_组织控制未成年人盗窃": {
+											"type": "boolean"
+										},
+										"info_出生地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_理由": {
+											"type": "keyword"
+										},
+										"info_当事人所有地位": {
+											"type": "keyword"
+										},
+										"info_有期徒刑以上刑": {
+											"type": "boolean"
+										},
+										"judgmentName": {
+											"type": "keyword"
+										},
+										"info_盗窃家庭成员或近亲属": {
+											"type": "boolean"
+										},
+										"info_从犯": {
+											"type": "boolean"
+										},
+										"info_归案情况": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_法院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_盗窃文物": {
+											"type": "boolean"
+										},
+										"info_居住地址_分类": {
+											"type": "keyword"
+										},
+										"info_盗窃国有馆藏一般文物": {
+											"type": "boolean"
+										},
+										"info_建议不批准逮捕": {
+											"type": "boolean"
+										},
+										"info_第一次犯案时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_逮捕理由分类": {
+											"type": "keyword"
+										},
+										"info_盗窃国有馆藏三级文物": {
+											"type": "boolean"
+										},
+										"info_盲人": {
+											"type": "boolean"
+										},
+										"info_行政级别分类": {
+											"type": "keyword"
+										},
+										"info_14_18周岁": {
+											"type": "boolean"
+										},
+										"info_主动归还": {
+											"type": "boolean"
+										},
+										"info_逮捕理由": {
+											"type": "keyword"
+										},
+										"info_如实供述": {
+											"type": "boolean"
+										},
+										"info_决定机关": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_总金额": {
+											"type": "double"
+										},
+										"info_刑事和解": {
+											"type": "boolean"
+										},
+										"info_多次盗窃": {
+											"type": "boolean"
+										},
+										"info_政府事业单位分类": {
+											"type": "keyword"
+										},
+										"info_特殊地点盗窃": {
+											"type": "boolean"
+										},
+										"info_突发事件期间盗窃": {
+											"type": "boolean"
+										},
+										"info_罚金数额": {
+											"type": "double"
+										},
+										"info_防卫过当": {
+											"type": "boolean"
+										},
+										"info_教唆犯": {
+											"type": "boolean"
+										},
+										"info_犯罪时长": {
+											"type": "long"
+										},
+										"info_团伙": {
+											"type": "boolean"
+										},
+										"info_精神病人": {
+											"type": "boolean"
+										},
+										"info_为违法活动盗窃": {
+											"type": "boolean"
+										},
+										"info_职业_分类": {
+											"type": "keyword"
+										},
+										"info_从轻": {
+											"type": "boolean"
+										},
+										"info_公安局取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_携带凶器": {
+											"type": "boolean"
+										},
+										"info_判罚理由": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_羁押开始时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_立功": {
+											"type": "boolean"
+										},
+										"info_又聋又哑或盲人": {
+											"type": "boolean"
+										},
+										"info_认罪": {
+											"type": "boolean"
+										},
+										"info_居住地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_未遂犯": {
+											"type": "boolean"
+										},
+										"info_职业": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_重刑理由": {
+											"type": "keyword"
+										},
+										"info_不逮捕理由分类": {
+											"type": "keyword"
+										},
+										"info_盗窃金额": {
+											"type": "long"
+										},
+										"judgmentType": {
+											"type": "keyword"
+										},
+										"info_悔罪": {
+											"type": "boolean"
+										},
+										"info_盗窃国有馆藏一般文物数量": {
+											"type": "double"
+										},
+										"info_又聋又哑": {
+											"type": "boolean"
+										},
+										"info_侵害场所分类": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_缓刑": {
+											"type": "boolean"
+										},
+										"info_主刑罪名": {
+											"type": "keyword"
+										},
+										"info_前科罪名": {
+											"type": "keyword"
+										},
+										"info_建议批准逮捕": {
+											"type": "boolean"
+										},
+										"info_当事人地位": {
+											"type": "keyword"
+										},
+										"info_避险过当": {
+											"type": "boolean"
+										},
+										"info_户籍地址_分类": {
+											"type": "keyword"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"info_案发前放回原处": {
+											"type": "boolean"
+										},
+										"info_一年内因盗窃受过行政处罚": {
+											"type": "boolean"
+										},
+										"info_胁从犯": {
+											"type": "boolean"
+										},
+										"info_决定刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_出生地址_分类": {
+											"type": "keyword"
+										},
+										"info_拘传时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_扒窃": {
+											"type": "boolean"
+										},
+										"info_初犯偶犯": {
+											"type": "boolean"
+										},
+										"info_谅解": {
+											"type": "boolean"
+										},
+										"info_前科": {
+											"type": "boolean"
+										},
+										"info_党派": {
+											"type": "keyword"
+										},
+										"info_流窜作案": {
+											"type": "boolean"
+										},
+										"info_盗窃国有馆藏三级文物数量": {
+											"type": "double"
+										},
+										"info_盗窃特殊物资": {
+											"type": "keyword"
+										},
+										"info_被胁迫参加犯罪": {
+											"type": "boolean"
+										},
+										"info_检察院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_中止犯": {
+											"type": "boolean"
+										},
+										"info_积极赔偿": {
+											"type": "boolean"
+										},
+										"info_职业_分类_TDH": {
+											"type": "keyword"
+										},
+										"judgmentNameSize": {
+											"type": "long"
+										},
+										"info_年龄": {
+											"type": "long"
+										},
+										"info_执行逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_户籍地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_满75周岁": {
+											"type": "boolean"
+										},
+										"info_出生日期": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_因生活所迫学习治病急需": {
+											"type": "boolean"
+										},
+										"info_决定逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_抓获时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_既遂犯": {
+											"type": "boolean"
+										},
+										"info_破坏性手段": {
+											"type": "boolean"
+										},
+										"info_教唆未成年人犯罪": {
+											"type": "boolean"
+										},
+										"info_不逮捕理由": {
+											"type": "keyword"
+										},
+										"info_盗窃范围": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_盗窃国有馆藏二级以上文物数量": {
+											"type": "double"
+										},
+										"info_一般累犯": {
+											"type": "boolean"
+										},
+										"info_入户盗窃": {
+											"type": "boolean"
+										},
+										"info_非主从犯": {
+											"type": "boolean"
+										},
+										"info_判罚类型": {
+											"type": "keyword"
+										},
+										"info_金额范围": {
+											"type": "keyword"
+										},
+										"info_盗窃国有馆藏二级以上文物": {
+											"type": "boolean"
+										},
+										"info_羁押结束时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_逮捕或拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_首要分子": {
+											"type": "boolean"
+										},
+										"combinedResults": {
+											"type": "boolean"
+										},
+										"info_因盗窃受过刑事处罚": {
+											"type": "boolean"
+										},
+										"info_工作单位": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_社会危害性": {
+											"type": "boolean"
+										},
+										"info_坦白": {
+											"type": "boolean"
+										},
+										"info_16_18周岁": {
+											"type": "boolean"
+										},
+										"info_主犯": {
+											"type": "boolean"
+										},
+										"info_未遂次数": {
+											"type": "long"
+										},
+										"info_组织机构代码": {
+											"type": "keyword"
+										},
+										"info_执行刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_轻刑理由": {
+											"type": "keyword"
+										},
+										"info_教唆他人犯罪但被教唆者未犯被教唆的罪": {
+											"type": "boolean"
+										},
+										"info_监视居住时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										}
+									}
+								},
+								"pname": {
+									"type": "keyword"
+								},
+								"recordlist": {
+									"properties": {
+										"expropriation": {
+											"type": "boolean"
+										},
+										"prisonDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"police": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceTime": {
+											"type": "double"
+										},
+										"criminalRecordName": {
+											"type": "keyword"
+										},
+										"judgeDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"releaseDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"confiscateProperty": {
+											"type": "long"
+										},
+										"court": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceType": {
+											"type": "keyword"
+										}
+									}
+								},
+								"index": {
+									"type": "long"
+								},
+								"ptype": {
+									"type": "keyword"
+								}
+							}
+						},
+						"meta_文书类型_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_社会危险性分析": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布法院": {
+							"type": "keyword"
+						},
+						"section_事实构成": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_律所": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_审查逮捕意见书": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"section_案情简要_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_被告": {
+							"type": "keyword"
+						},
+						"section_标题_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_aydm": {
+							"type": "keyword"
+						},
+						"meta_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_其他_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_需要说明的问题_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_审判长": {
+							"type": "keyword"
+						},
+						"meta_检察院_市": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_提起公诉时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"section_相关法条_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_损失大于盗窃数额": {
+							"type": "boolean"
+						},
+						"meta_裁判结果": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案由": {
+							"type": "keyword"
+						},
+						"section_理由_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_人物关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "keyword"
+								},
+								"sourcePersonName": {
+									"type": "keyword"
+								},
+								"relations": {
+									"type": "keyword"
+								}
+							}
+						},
+						"pos_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_不批准逮捕的理由": {
+							"type": "keyword"
+						},
+						"meta_关联案号": {
+							"type": "keyword"
+						},
+						"meta_律师": {
+							"type": "keyword"
+						},
+						"section_相关法条_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件受理费": {
+							"properties": {
+								"feepart": {
+									"type": "double"
+								},
+								"names": {
+									"type": "keyword"
+								},
+								"pt": {
+									"type": "keyword"
+								},
+								"share": {
+									"type": "double"
+								},
+								"feeCourt": {
+									"type": "double"
+								}
+							}
+						},
+						"section_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_需要说明的问题_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_侦查机关名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_省": {
+							"type": "keyword"
+						},
+						"不起诉决定书": {
+							"type": "boolean"
+						},
+						"section_文书首部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_其他_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_理由分类": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_犯罪嫌疑人基本情况_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院名称": {
+							"type": "keyword"
+						},
+						"section_事实构成_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_嫌疑人_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"smeta_落款日期_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_基本案情": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_判决主文_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_案发时间小时": {
+							"type": "long"
+						},
+						"time": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_被告陈述": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_审理查明_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_理由_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_当事人关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"sourcePersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"relations": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								}
+							}
+						},
+						"判决书": {
+							"type": "boolean"
+						},
+						"section_案情简要2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害物品分类": {
+							"type": "keyword"
+						},
+						"section_不批准逮捕的理由_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"id": {
+							"type": "keyword"
+						},
+						"section_办案风险评估及预案": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布时间": {
+							"type": "keyword"
+						},
+						"section_落款_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_事实构成_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_盗窃特殊对象": {
+							"type": "keyword"
+						},
+						"section_判决主文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款": {
+							"type": "keyword"
+						},
+						"pos_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_裁判依据_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_需要说明的问题_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_被告不在场": {
+							"type": "boolean"
+						},
+						"section_犯罪嫌疑人基本情况_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_经审查认定的案件事实及证据_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_不批准逮捕的理由_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_需要说明的问题_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_事实构成_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"起诉书": {
+							"type": "boolean"
+						},
+						"meta_文书记录日期": {
+							"type": "keyword"
+						},
+						"section_不批准逮捕的理由_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件来源": {
+							"type": "keyword"
+						},
+						"section_需要说明的问题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_开庭情况": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_全文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判要点": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_不批准逮捕的理由_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_造成死亡或伤残": {
+							"type": "boolean"
+						},
+						"section_理由_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害场所分类": {
+							"type": "keyword"
+						},
+						"section_发案、立案、破案经过_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院_省": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_开庭审理时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"section_其他_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件受理费总额": {
+							"type": "double"
+						},
+						"section_案情简要_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院名称": {
+							"type": "keyword"
+						},
+						"section_理由_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_需要说明的问题_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案例编号": {
+							"type": "keyword"
+						},
+						"meta_关键词": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_关联文书": {
+							"properties": {
+								"meta_案件名称": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"meta_案号": {
+									"type": "keyword"
+								},
+								"meta_文书名称": {
+									"type": "keyword"
+								},
+								"meta_法院名称": {
+									"type": "keyword"
+								},
+								"meta_裁判日期": {
+									"format": "strict_date_optional_time||epoch_millis",
+									"type": "date"
+								}
+							}
+						},
+						"meta_检察业务类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_审理查明_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_出庭检察官": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_审理查明_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_承办人": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"ssection_相关法条_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"审查逮捕意见书": {
+							"type": "boolean"
+						},
+						"section_落款": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_市": {
+							"type": "keyword"
+						},
+						"meta_裁判理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号": {
+							"type": "keyword"
+						},
+						"section_其他_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_判决书名字": {
+							"type": "keyword"
+						},
+						"meta_级别": {
+							"type": "keyword"
+						},
+						"ssection_处理意见_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_审理查明_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_区县": {
+							"type": "keyword"
+						},
+						"meta_裁判日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"ssection_文书尾部_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"ssection_落款_复核案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_嫌疑人_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_审理查明_不捕复议案件审查意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_受案和审查过程": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件结果": {
+							"type": "keyword"
+						},
+						"section_判决主文2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_原告": {
+							"type": "keyword"
+						}
+					}
+				},
+				"故意伤害罪": {
+					"properties": {
+						"info_伤害后果": {
+							"type": "keyword"
+						},
+						"section_落款_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_嫌疑人_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_当事人关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"sourcePersonName": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"relations": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								}
+							}
+						},
+						"判决书": {
+							"type": "boolean"
+						},
+						"meta_审理程序类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院_区县": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害物品分类": {
+							"type": "keyword"
+						},
+						"caseId": {
+							"type": "keyword"
+						},
+						"section_事实构成2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_案发时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_文书名称": {
+							"type": "keyword"
+						},
+						"id": {
+							"type": "keyword"
+						},
+						"section_经审查认定的案件事实及证据_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_判决类型": {
+							"type": "keyword"
+						},
+						"meta_发布时间": {
+							"type": "keyword"
+						},
+						"section_落款_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发回重审": {
+							"type": "boolean"
+						},
+						"section_文书尾部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_案情简要": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_事实构成_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_案件类型": {
+							"type": "keyword"
+						},
+						"meta_书记员": {
+							"type": "keyword"
+						},
+						"info_第一次犯案时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"section_判决主文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款": {
+							"type": "keyword"
+						},
+						"pos_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法律条款索引": {
+							"type": "keyword"
+						},
+						"info_被告不在场": {
+							"type": "boolean"
+						},
+						"section_其他2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_经审查认定的案件事实及证据_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院层级": {
+							"type": "keyword"
+						},
+						"section_需要说明的问题_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_判决层级": {
+							"type": "keyword"
+						},
+						"meta_审判员": {
+							"type": "keyword"
+						},
+						"起诉书": {
+							"type": "boolean"
+						},
+						"section_其他": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书记录日期": {
+							"type": "keyword"
+						},
+						"section_犯罪嫌疑人基本情况_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_犯罪时长": {
+							"type": "long"
+						},
+						"meta_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_伤残等级": {
+							"type": "long"
+						},
+						"meta_人物信息": {
+							"include_in_parent": true,
+							"type": "nested",
+							"properties": {
+								"pnameType": {
+									"type": "long"
+								},
+								"ptypes": {
+									"type": "keyword"
+								},
+								"peopleAttrMap": {
+									"type": "nested",
+									"properties": {
+										"info_缓刑月数": {
+											"type": "double"
+										},
+										"info_伤害后果": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_退赃退赔": {
+											"type": "boolean"
+										},
+										"info_有期徒刑以下刑": {
+											"type": "boolean"
+										},
+										"info_身份证号码": {
+											"type": "keyword"
+										},
+										"info_主刑月数": {
+											"type": "double"
+										},
+										"info_民族": {
+											"type": "keyword"
+										},
+										"info_从重": {
+											"type": "boolean"
+										},
+										"info_教育程度": {
+											"type": "keyword"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"info_性别": {
+											"type": "keyword"
+										},
+										"info_执行机关": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_自首": {
+											"type": "boolean"
+										},
+										"judgmentTime": {
+											"type": "double"
+										},
+										"info_预备犯": {
+											"type": "boolean"
+										},
+										"info_出生地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_理由": {
+											"type": "keyword"
+										},
+										"info_当事人所有地位": {
+											"type": "keyword"
+										},
+										"info_手段残忍程度": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_有期徒刑以上刑": {
+											"type": "boolean"
+										},
+										"judgmentName": {
+											"type": "keyword"
+										},
+										"info_从犯": {
+											"type": "boolean"
+										},
+										"info_归案情况": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_法院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_轻伤人数": {
+											"type": "long"
+										},
+										"info_居住地址_分类": {
+											"type": "keyword"
+										},
+										"info_建议不批准逮捕": {
+											"type": "boolean"
+										},
+										"info_第一次犯案时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_逮捕理由分类": {
+											"type": "keyword"
+										},
+										"info_盲人": {
+											"type": "boolean"
+										},
+										"info_行政级别分类": {
+											"type": "keyword"
+										},
+										"info_14_18周岁": {
+											"type": "boolean"
+										},
+										"info_逮捕理由": {
+											"type": "keyword"
+										},
+										"info_如实供述": {
+											"type": "boolean"
+										},
+										"info_决定机关": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_刑事和解": {
+											"type": "boolean"
+										},
+										"info_政府事业单位分类": {
+											"type": "keyword"
+										},
+										"info_罚金数额": {
+											"type": "double"
+										},
+										"info_防卫过当": {
+											"type": "boolean"
+										},
+										"info_教唆犯": {
+											"type": "boolean"
+										},
+										"info_犯罪时长": {
+											"type": "long"
+										},
+										"info_团伙": {
+											"type": "boolean"
+										},
+										"info_精神病人": {
+											"type": "boolean"
+										},
+										"info_职业_分类": {
+											"type": "keyword"
+										},
+										"info_从轻": {
+											"type": "boolean"
+										},
+										"info_公安局取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_判罚理由": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_立功": {
+											"type": "boolean"
+										},
+										"info_又聋又哑或盲人": {
+											"type": "boolean"
+										},
+										"info_认罪": {
+											"type": "boolean"
+										},
+										"info_居住地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_未遂犯": {
+											"type": "boolean"
+										},
+										"info_职业": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_重刑理由": {
+											"type": "keyword"
+										},
+										"info_不逮捕理由分类": {
+											"type": "keyword"
+										},
+										"judgmentType": {
+											"type": "keyword"
+										},
+										"info_悔罪": {
+											"type": "boolean"
+										},
+										"info_又聋又哑": {
+											"type": "boolean"
+										},
+										"info_缓刑": {
+											"type": "boolean"
+										},
+										"info_主刑罪名": {
+											"type": "keyword"
+										},
+										"info_前科罪名": {
+											"type": "keyword"
+										},
+										"info_建议批准逮捕": {
+											"type": "boolean"
+										},
+										"info_当事人地位": {
+											"type": "keyword"
+										},
+										"info_避险过当": {
+											"type": "boolean"
+										},
+										"info_户籍地址_分类": {
+											"type": "keyword"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"info_胁从犯": {
+											"type": "boolean"
+										},
+										"info_决定刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_出生地址_分类": {
+											"type": "keyword"
+										},
+										"info_拘传时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_初犯偶犯": {
+											"type": "boolean"
+										},
+										"info_谅解": {
+											"type": "boolean"
+										},
+										"info_前科": {
+											"type": "boolean"
+										},
+										"info_党派": {
+											"type": "keyword"
+										},
+										"info_流窜作案": {
+											"type": "boolean"
+										},
+										"info_被胁迫参加犯罪": {
+											"type": "boolean"
+										},
+										"info_轻伤伤残等级": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_检察院取保时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_重伤人数": {
+											"type": "long"
+										},
+										"info_中止犯": {
+											"type": "boolean"
+										},
+										"info_积极赔偿": {
+											"type": "boolean"
+										},
+										"info_职业_分类_TDH": {
+											"type": "keyword"
+										},
+										"info_羁押情况": {
+											"properties": {
+												"dateArrestEnforcement": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateFirstCustody": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateCapture": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateArrestOpinion": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateBailCourt": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateBailProcuratorate": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												},
+												"dateDetentionEnforcement": {
+													"format": "strict_date_optional_time||epoch_millis",
+													"type": "date"
+												}
+											}
+										},
+										"judgmentNameSize": {
+											"type": "long"
+										},
+										"info_年龄": {
+											"type": "long"
+										},
+										"info_执行逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_户籍地址": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_重伤伤残等级": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_满75周岁": {
+											"type": "boolean"
+										},
+										"info_出生日期": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_决定逮捕时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_抓获时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_既遂犯": {
+											"type": "boolean"
+										},
+										"info_破坏性手段": {
+											"type": "boolean"
+										},
+										"info_教唆未成年人犯罪": {
+											"type": "boolean"
+										},
+										"info_不逮捕理由": {
+											"type": "keyword"
+										},
+										"info_一般累犯": {
+											"type": "boolean"
+										},
+										"info_判罚类型": {
+											"type": "keyword"
+										},
+										"info_逮捕或拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_首要分子": {
+											"type": "boolean"
+										},
+										"combinedResults": {
+											"type": "boolean"
+										},
+										"info_工作单位": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"info_社会危害性": {
+											"type": "boolean"
+										},
+										"info_坦白": {
+											"type": "boolean"
+										},
+										"info_主犯": {
+											"type": "boolean"
+										},
+										"info_未遂次数": {
+											"type": "long"
+										},
+										"info_组织机构代码": {
+											"type": "keyword"
+										},
+										"info_执行刑事拘留时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"info_轻刑理由": {
+											"type": "keyword"
+										},
+										"info_监视居住时间": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										}
+									}
+								},
+								"pname": {
+									"type": "keyword"
+								},
+								"recordlist": {
+									"properties": {
+										"expropriation": {
+											"type": "boolean"
+										},
+										"prisonDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"police": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceTime": {
+											"type": "double"
+										},
+										"criminalRecordName": {
+											"type": "keyword"
+										},
+										"judgeDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"probationTime": {
+											"type": "double"
+										},
+										"fine": {
+											"type": "double"
+										},
+										"releaseDate": {
+											"format": "strict_date_optional_time||epoch_millis",
+											"type": "date"
+										},
+										"confiscateProperty": {
+											"type": "long"
+										},
+										"court": {
+											"type": "text",
+											"analyzer": "index_ansj"
+										},
+										"sentenceType": {
+											"type": "keyword"
+										}
+									}
+								},
+								"index": {
+									"type": "long"
+								},
+								"ptype": {
+									"type": "keyword"
+								}
+							}
+						},
+						"meta_案件来源": {
+							"type": "keyword"
+						},
+						"section_需要说明的问题_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_开庭情况": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_社会危险性分析": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_全文": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判要点": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_发布法院": {
+							"type": "keyword"
+						},
+						"section_事实构成": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_律所": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_落款日期_审查逮捕意见书": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书首部2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_被告": {
+							"type": "keyword"
+						},
+						"section_标题_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_aydm": {
+							"type": "keyword"
+						},
+						"meta_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_落款_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_侵害场所分类": {
+							"type": "keyword"
+						},
+						"meta_审判长": {
+							"type": "keyword"
+						},
+						"meta_检察院_市": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_提起公诉时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_检察院_省": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_发案、立案、破案经过_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_裁判结果": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_文书类型_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案由": {
+							"type": "keyword"
+						},
+						"section_理由_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_人物关系": {
+							"properties": {
+								"targetPersonName": {
+									"type": "keyword"
+								},
+								"sourcePersonName": {
+									"type": "keyword"
+								},
+								"relations": {
+									"type": "keyword"
+								}
+							}
+						},
+						"section_处理意见_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_开庭审理时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_关联案号": {
+							"type": "keyword"
+						},
+						"meta_落款日期_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_律师": {
+							"type": "keyword"
+						},
+						"meta_案件受理费总额": {
+							"type": "double"
+						},
+						"meta_法院名称": {
+							"type": "keyword"
+						},
+						"meta_案例编号": {
+							"type": "keyword"
+						},
+						"meta_案件受理费": {
+							"properties": {
+								"feepart": {
+									"type": "double"
+								},
+								"names": {
+									"type": "keyword"
+								},
+								"pt": {
+									"type": "keyword"
+								},
+								"share": {
+									"type": "double"
+								},
+								"feeCourt": {
+									"type": "double"
+								}
+							}
+						},
+						"meta_关键词": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_关联文书": {
+							"properties": {
+								"meta_案件名称": {
+									"type": "text",
+									"analyzer": "index_ansj"
+								},
+								"meta_案号": {
+									"type": "keyword"
+								},
+								"meta_文书名称": {
+									"type": "keyword"
+								},
+								"meta_法院名称": {
+									"type": "keyword"
+								},
+								"meta_裁判日期": {
+									"format": "strict_date_optional_time||epoch_millis",
+									"type": "date"
+								}
+							}
+						},
+						"meta_检察业务类型": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_出庭检察官": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_裁判依据_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_侦查机关名称": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_承办人": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"审查逮捕意见书": {
+							"type": "boolean"
+						},
+						"section_落款": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_判决主文_判决书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"pos_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_市": {
+							"type": "keyword"
+						},
+						"meta_法院_省": {
+							"type": "keyword"
+						},
+						"meta_裁判理由": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号": {
+							"type": "keyword"
+						},
+						"不起诉决定书": {
+							"type": "boolean"
+						},
+						"meta_判决书名字": {
+							"type": "keyword"
+						},
+						"section_文书首部": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案号_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_文书尾部_起诉书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_级别": {
+							"type": "keyword"
+						},
+						"section_标题_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_处理意见_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_相关法条": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_标题": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"section_犯罪嫌疑人基本情况_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_检察院名称": {
+							"type": "keyword"
+						},
+						"meta_嫌疑人_审查逮捕意见书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_法院_区县": {
+							"type": "keyword"
+						},
+						"meta_裁判日期": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_基本案情": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_逮捕或拘留时间": {
+							"format": "strict_date_optional_time||epoch_millis",
+							"type": "date"
+						},
+						"meta_嫌疑人_不起诉决定书": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"info_案发时间小时": {
+							"type": "long"
+						},
+						"section_受案和审查过程": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"time": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_案件结果": {
+							"type": "keyword"
+						},
+						"section_判决主文2": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						},
+						"meta_原告": {
+							"type": "keyword"
+						},
+						"section_被告陈述": {
+							"type": "text",
+							"analyzer": "index_ansj"
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
