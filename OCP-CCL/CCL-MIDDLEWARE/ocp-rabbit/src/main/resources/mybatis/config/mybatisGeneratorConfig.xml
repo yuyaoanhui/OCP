@@ -28,7 +28,7 @@
 		<javaModelGenerator targetPackage="${model.package}"
 			targetProject="${target.project}">
 			<property name="rootClass"
-				value="com.futuredata.rabbit.middleware.orm.model.BaseModel" />
+				value="com.ocp.rabbit.middleware.orm.model.BaseModel" />
 		</javaModelGenerator>
 
 		<!--生成xml mapper文件 路径 -->
@@ -44,9 +44,8 @@
 		<!--对应数据库表名 -->
 		<table schema="" tableName="InfoPoint" domainObjectName="InfoPoint">
 		</table>
-		<!-- <table schema="" tableName="ta_guide_law" domainObjectName="GuideLaw">
-		</table>
-		<table schema="" tableName="tb_guide_law_index" domainObjectName="GuideLawIndex">
-		</table> -->
+		<!-- <table schema="" tableName="ta_guide_law" domainObjectName="GuideLaw"> 
+			</table> <table schema="" tableName="tb_guide_law_index" domainObjectName="GuideLawIndex"> 
+			</table> -->
 	</context>
 </generatorConfiguration>

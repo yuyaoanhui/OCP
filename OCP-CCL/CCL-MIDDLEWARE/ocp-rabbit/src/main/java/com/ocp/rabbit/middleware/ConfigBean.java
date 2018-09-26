@@ -32,7 +32,7 @@ import com.ocp.rabbit.middleware.orm.datasource.DynamicRoutingDataSource;
  */
 @PropertySource("classpath:application.properties")
 @Configuration
-@MapperScan("com.futuredata.rabbit.middleware.orm.mapper")
+@MapperScan("com.ocp.rabbit.middleware.orm.mapper")
 public class ConfigBean {
 
   @Value("${mybatis.mapper-locations}")

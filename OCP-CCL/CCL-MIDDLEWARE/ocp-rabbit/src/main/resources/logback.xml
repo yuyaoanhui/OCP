@@ -12,12 +12,12 @@
 	<!-- file appender -->
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>/logs/futuredata/rabbit/rabbit.log</File>
+		<File>/logs/ocp/rabbit/rabbit.log</File>
 		<encoder>
 			<pattern>%d [%t] %-5p [%c:%L] - %m%n</pattern>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>/logs/futuredata/rabbit/rabbit%i-log.zip
+			<FileNamePattern>/logs/ocp/rabbit/rabbit%i-log.zip
 			</FileNamePattern>
 			<MinIndex>1</MinIndex>
 			<MaxIndex>12</MaxIndex>
@@ -27,7 +27,7 @@
 			<MaxFileSize>100MB</MaxFileSize>
 		</triggeringPolicy>
 	</appender>
-	<logger name="com.futuredata" level="INFO" />
+	<logger name="com.ocp" level="INFO" />
 	<!-- common freamwork level -->
 	<logger name="org.springframework" level="WARN" />
 	<logger name="org.apache" level="INFO" />
