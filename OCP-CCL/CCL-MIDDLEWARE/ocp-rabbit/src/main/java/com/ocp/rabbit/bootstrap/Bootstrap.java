@@ -54,8 +54,8 @@ public final class Bootstrap {
       startup = 0;
       if (springContext == null) {// java 手动加载pring初始化
         logger.info("rabbit平台开始初始化......");
-        springContext = new AnnotationConfigApplicationContext("com.futuredata.rabbit.bootstrap",
-            "com.futuredata.rabbit.middleware");
+        springContext = new AnnotationConfigApplicationContext("com.ocp.rabbit.bootstrap",
+            "com.ocp.rabbit.middleware");
       }
       initMiddleWare();
       initContext();

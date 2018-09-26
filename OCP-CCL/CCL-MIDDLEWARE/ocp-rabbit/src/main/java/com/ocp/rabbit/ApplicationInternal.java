@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationContext;
 import com.ocp.rabbit.bootstrap.Bootstrap;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan(basePackages = {"com.futuredata.rabbit.middleware.orm.mapper"})
+@MapperScan(basePackages = {"com.ocp.rabbit.middleware.orm.mapper"})
 public class ApplicationInternal extends SpringBootServletInitializer {
   private static final Logger logger = LoggerFactory.getLogger(ApplicationInternal.class);
   public static ApplicationContext springContext = null;
