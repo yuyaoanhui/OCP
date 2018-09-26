@@ -8,7 +8,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>extract-info</artifactId>
+	<artifactId>es-data-transfer</artifactId>
 	<packaging>jar</packaging>
 
 	<name>es-data-transfer</name>

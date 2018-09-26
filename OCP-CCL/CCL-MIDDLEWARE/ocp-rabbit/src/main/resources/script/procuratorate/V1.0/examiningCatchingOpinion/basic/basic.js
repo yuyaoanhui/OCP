@@ -1,0 +1,32 @@
+var NAMESPACE_PROCURATORATE_EXAMININGCATCHINGOPINION_basic = {
+	basicPrePoints : {// 要提前抽取的信息点,程序会根据文书案由自动选择部分执行
+		base : [ "document_base_info", "meta_document_type",
+				"meta_procurate_type", "meta_source_text_name", "case_id",
+				"meta_contractor", "meta_signature_date",
+				"meta_investigate_time", "meta_investigate_name",
+				"meta_case_ay", "suspect_base_info", "info_justice_situation",
+				"info_advice_reject_arrest", "info_advice_approve_arrest",
+				"info_reason", "add_punc", "unique_id", "section_title",
+				"section_suspect_process", "section_suspect_base_info",
+				"section_solve_process", "section_case_fact_evidence",
+				"section_return_reason", "section_ques_to_explain",
+				"section_risk_analysis", "section_risk_asses_plan",
+				"section_handle_opinion", "section_signature" ],
+		criminal : [ "info_principle_criminal", "info_accessory",
+				"info_offender", "info_jailbird", "info_gang_crime",
+				"info_compensation", "info_active_compensation",
+				"info_understanding", "info_confession",
+				"info_confession_incourt", "info_surrender",
+				"info_merits_gain", "info_criminal_reconciliation",
+				"info_crime_multiple_spot", "info_abetment",
+				"info_coerced_offender", "info_prepared_offender",
+				"info_aborted_offender", "info_incomplete_offender",
+				"info_duress_offender", "info_minor_abetment",
+				"info_excessive_defence", "info_excessive_danger_avoid",
+				"info_mental_disorder", "info_deaf_mute",
+				"info_defendant_wrongdoing", "info_innocent_reason",
+				"info_victim_pregnant", "info_victim_minor", "info_victim_old",
+				"info_victim_disabled", "info_blind", "info_active_return",
+				"info_tell_truth", "info_social_risk", "accomplishedCrime" ]
+	}
+}

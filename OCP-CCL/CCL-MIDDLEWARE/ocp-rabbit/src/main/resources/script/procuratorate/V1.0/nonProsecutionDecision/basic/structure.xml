@@ -1,0 +1,26 @@
+<ParaLabel>
+	<TITLE DESC="标题">
+		<![CDATA[检察院$#决定书$]]>
+	</TITLE>
+	<SUSPECT_BASE_INFO DESC="犯罪嫌疑人基本情况">
+		<![CDATA[^被不起诉人]]>
+	</SUSPECT_BASE_INFO>
+	<SOLVE_PROCESS DESC="发案、立案、破案经过">
+		<![CDATA[本案由[^,，\.。;；]*?终结]]>
+	</SOLVE_PROCESS>
+	<CASE_FACT_EVIDENCE DESC="经审查认定的案件事实及证据">
+		<![CDATA[移送审查起诉认定|依法审查查明]]>
+	</CASE_FACT_EVIDENCE>
+	<QUES_TO_EXPLAIN DESC="需要说明的问题">
+		<![CDATA[被(害|不起诉)人[^,，\.。;；]*?如不服]]>
+	</QUES_TO_EXPLAIN>
+	<HANDLE_OPINION DESC="处理意见">
+		<![CDATA[本院认为]]>
+	</HANDLE_OPINION>
+	<SIGNATURE DESC="落款日期">
+		<![CDATA[^\s*[\d一二三四五六七八九零○]+年[\d一二三四五六七八九十]+月[\d一二三四五六七八九十]+日\s*$]]>
+	</SIGNATURE>
+	<ADDITION DESC="文书尾部">
+		<![CDATA[^附]]>
+	</ADDITION>
+</ParaLabel>

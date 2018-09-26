@@ -1,0 +1,131 @@
+<ParaLabel>
+	<COURT DESC="法院">
+		<![CDATA[人民法院$]]>
+	</COURT>
+	<CASE_TYPE DESC="文书类型">
+		<![CDATA[^.{3,10}书$]]>
+	</CASE_TYPE>
+	<CASE_ID DESC="案号">
+		<![CDATA[[\(（]\d{4}.*?第?\d+号]]>
+	</CASE_ID>
+	<REPRESENTATIVE DESC="法定代表人">
+		<![CDATA[^(法定代表人|法定大表人|(主要)?负责人|经营者).*$]]>
+	</REPRESENTATIVE>
+	<ASSIGNED DESC="代理人/监护人">
+		<![CDATA[^(指定代理人|法定代理人|法定监护人).*$]]>
+	</ASSIGNED>
+	<ENTRUSTED DESC="委托代理人">
+		<![CDATA[(^((诉讼|委托(诉讼)?)代[理表]人|辩护人)|共同(诉讼)?委托代理人|以上[\u4e00-\u9fa5]*?委托代理人)(?!认为|辩[称护解]|提出)]]>
+	</ENTRUSTED>
+	<ATTORNEY DESC="律师">
+		<![CDATA[^(.*?)(律师).*$]]>
+	</ATTORNEY>
+	<DEFENDANT DESC="被告">
+		<![CDATA[]]>
+	</DEFENDANT>
+	<PLAINTIFF DESC="原告">
+		<![CDATA[]]>
+	</PLAINTIFF>
+	<THIRD_PERSON DESC="第三人">
+		<![CDATA[^(.*?)(第三人).*$]]>
+	</THIRD_PERSON>
+	<CASE_SUMMARY DESC="审理经过">
+		<![CDATA[审[理查](终结|完毕)|立案执行|向本院(指控|申请|提[起出])|提起公诉|本院依据已经[发产]生法律效力.*?发出.*?书|本院依法进行了审查|开庭(进行了审理|审理了本案)]]>
+	</CASE_SUMMARY>
+	<OFFICE_OPINION DESC="公(抗)诉机关意见">
+		<![CDATA[(?<!驳回|要求)(抗诉|起诉书|(公诉机关|检察[院官员])([原一二再]审)?((起诉)?指控|提出|认为|(出庭|的)?意见|(对|(当庭)?发表)[^：:。；;]*?意见))]]>
+	</OFFICE_OPINION>
+	<PLEADER_OPINION DESC="辩护人意见">
+		<![CDATA[辩护(意见)?认为|辩护称|辩护人((主要)?辩称|[\u4e00-\u9fa5]*?提出)|辩护意见[:：]]]>
+	</PLEADER_OPINION>
+	<PLAINTIFF_ARGS_FISRT DESC="一审原告诉称">
+		<![CDATA[(一审)+((起)?诉称|申请再审称|上诉请求)|一审[\u4e00-\u9fa5、]*?(诉讼|起诉)请求[:：]]]>
+	</PLAINTIFF_ARGS_FISRT>
+	<PLAINTIFF_ARGS_SECOND DESC="二审原告诉称">
+		<![CDATA[二审((起)?诉称|申请再审称|上诉请求)|不服一审[\u4e00-\u9fa5,、，]*?上诉(请求|称)[:：]]]>
+	</PLAINTIFF_ARGS_SECOND>
+	<PLAINTIFF_ARGS_REVIEW DESC="再审原告诉称">
+		<![CDATA[(再审)+((起)?诉称|申请再审称|上诉请求)]]>
+	</PLAINTIFF_ARGS_REVIEW>
+	<PLAINTIFF_ARGS_ORIGINAL DESC="原审原告诉称">
+		<![CDATA[(原审)+((起)?诉称|申请再审称|上诉请求)|原审[\u4e00-\u9fa5、]*?(诉讼|起诉)请求[:：]]]>
+	</PLAINTIFF_ARGS_ORIGINAL>
+	<PLAINTIFF_ARGS DESC="原告诉称">
+		<![CDATA[((上诉人|原告)((诉)?称|[\u4e00-\u9fa5]*?提出|主张|[\u4e00-\u9fa5,，]*?向本院提起上诉)|(?<!抗)诉称|(?<![的其])诉讼请求|上诉意见是)[:：,，]|上诉(提出|称)|申请再审称|上诉请求|上诉理由([及和]答辩)?(是)?[:：,，]|(提[起出](上诉|申请)|诉至(本|[一原]审法)院)[,，]?(认为|称|提出)]]>
+	</PLAINTIFF_ARGS>
+	<DEFENDANT_ARGS_FIRST DESC="被告一审辩称">
+		<![CDATA[一审[\u4e00-\u9fa5、]*?(辩[称解]|答辩|提交书面意见称)]]>
+	</DEFENDANT_ARGS_FIRST>
+	<DEFENDANT_ARGS_SECOND DESC="被告二审辩称">
+		<![CDATA[(二审)+(辩[称解]|答辩|提交书面意见称)]]>
+	</DEFENDANT_ARGS_SECOND>
+	<DEFENDANT_ARGS_REVIEW DESC="被告再审辩称">
+		<![CDATA[(再审)+(辩[称解]|答辩|提交书面意见称)]]>
+	</DEFENDANT_ARGS_REVIEW>
+	<DEFENDANT_ARGS_ORIGINAL DESC="被告原审辩称">
+		<![CDATA[原审[\u4e00-\u9fa5、]*?(辩称|提交书面意见称)]]>
+	</DEFENDANT_ARGS_ORIGINAL>
+	<DEFENDANT_ARGS DESC="被告辩称">
+		<![CDATA[(辩[称解]|答辩(称)?)(意见)?[:：,，]|提交书面意见称|对(起诉书|指控|检察|公诉|原判|[一原]审)[^：:。；;]*?(异议|供认|辩[解称]|答辩|认为|提出)|(被上诉人|被告).{0,3}(质证|提出|答辩|辩称)]]>
+	</DEFENDANT_ARGS>
+	<FACTS_FOUND_REVIEW DESC="再审查明">
+		<![CDATA[再审(审[理查]查明|查明)]]>
+	</FACTS_FOUND_REVIEW>
+	<FACTS_FOUND_SECONDARY DESC="二审查明">
+		<![CDATA[(二审)+((经)?(审[理查]?)?查明|(查明[一-龥]*?事实如下))|^(本院)?二审查明[:：,，]]]>
+	</FACTS_FOUND_SECONDARY>
+	<FACTS_FOUND_PRIMARY DESC="一审查明">
+		<![CDATA[(?<![与对])(一审)+[\u4e00-\u9fa5,、，]*?((审[理查])?查明|查明[一-龥]*?事实如下|认定事实|认定[:：，,])]]>
+	</FACTS_FOUND_PRIMARY>
+	<FACTS_FOUND_BASE DESC="原审查明">
+		<![CDATA[(?<![与和])(原审)(法院)?(经)?(判决)?(审[理查]查明|(查明([一-龥]*?事实如下)?))|(?<![与对])(原判|原审(法院)?(判决)?)认定(?![为的]|事实清楚)|(原判|法院|原审判决)依据[\u4e00-\u9fa5,、，;；《》]*?(认定|查明)[:：]]]>
+	</FACTS_FOUND_BASE>
+	<FACTS_FOUND DESC="经审查明">
+		<![CDATA[(经(过)?审理|经审?查|再审查明|审[理查][查审]明|((认定|确认|查明)[一-龥]*?事实如下)(?!认为)|((查明|确认|认定)[以如]下[一-龥]*?事实)|(案件|本案)事实(认定|确认)如下|(下列|[以如]下|对[^,，\.。;；:：]*?)事实[^,，\.。;；:：]*?(确认|认定))]]>
+	</FACTS_FOUND>
+	<FACTS_FOUND_CMPL DESC="另查明">
+		<![CDATA[[另再]查|同时查明]]>
+	</FACTS_FOUND_CMPL>
+	<FACTS_ABOVE DESC="上诉事实">
+		<![CDATA[(以上|上述)事实]]>
+	</FACTS_ABOVE>
+	<COURT_BASE_OPINION DESC="原审法院认为(观点)">
+		<![CDATA[原审(法院)?(经审理)?认为|(?<![:：、,，])原[判审][\u4e00-\u9fa5]*?认为]]>
+	</COURT_BASE_OPINION>
+	<COURT_PRIMARY_OPINION DESC="一审法院认为(观点)">
+		<![CDATA[一审(法院)?(经审理)?认为]]>
+	</COURT_PRIMARY_OPINION>
+	<COURT_SECONDARY_OPINION DESC="二审法院认为(观点)">
+		<![CDATA[(本院)?二审(法院)?(认为|确认)]]>
+	</COURT_SECONDARY_OPINION>
+	<COURT_REVIEW_OPINION DESC="再审法院认为(观点)">
+		<![CDATA[再审(法院)?认为]]>
+	</COURT_REVIEW_OPINION>
+	<COURT_OPINION DESC="法院观点(本院认为)">
+		<![CDATA[^(本院|合议庭)[^，,；;\.。原二]*(认为|确认)|本院认为|裁定如下[:：]]]>
+	</COURT_OPINION>
+	<CHIEF_JUDGE DESC="审判长">
+		<![CDATA[^审\s?判\s?长.*$]]>
+	</CHIEF_JUDGE>
+	<JUDGES DESC="审判员">
+		<![CDATA[^(代\s?理\s?)?审\s?判\s?员.*$]]>
+	</JUDGES>
+	<CHIEF_EXECUTIVE DESC="执行长">
+		<![CDATA[^执行长.*$]]>
+	</CHIEF_EXECUTIVE>
+	<EXECUTOR DESC="执行员">
+		<![CDATA[^执行员.*$]]>
+	</EXECUTOR>
+	<JUDGE_ASSESSOR DESC="人民陪审员">
+		<![CDATA[^(人民)陪审员.*$]]>
+	</JUDGE_ASSESSOR>
+	<RECORD_DATE DESC="落款日期">
+		<![CDATA[^.{4}年.{1,2}月.{1,3}日$]]>
+	</RECORD_DATE>
+	<CLERK DESC="书记员">
+		<![CDATA[^书记员.*$]]>
+	</CLERK>
+	<LEGAL_PROVISION DESC="附：相关法条">
+		<![CDATA[^附[^,，：:\.。；;]*(法条|条文|法律|法规)+(^《.*》)?|^附(件)?[:|：]((.*?)《.*?》|[^,，：:\.。；;]*(法条|条文|法律|法规))|^引用的(法条|条文|法律|法规)+|^本案[^,，：:\.。；;]*(法条|条文|法律|法规)|^法律条文[:：]]]>
+	</LEGAL_PROVISION>
+</ParaLabel>

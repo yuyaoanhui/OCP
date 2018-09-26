@@ -1,0 +1,20 @@
+<ParaLabel>
+	<TITLE DESC="标题">
+		<![CDATA[(公安|分)局$#逮捕书$]]>
+	</TITLE>
+	<SUSPECT_BASE_INFO DESC="犯罪嫌疑人基本情况">
+		<![CDATA[犯罪嫌疑人[^\.。;；]*?(,|，|：|:)[男女]]]>
+	</SUSPECT_BASE_INFO>
+	<SOLVE_PROCESS DESC="发案、立案、破案经过">
+		<![CDATA[犯罪嫌疑人[^,，\.。;；]*?涉嫌[^,，\.。;；]*?一案|至我局报案|(举报|报案)至我局]]>
+	</SOLVE_PROCESS>
+	<CASE_FACT_EVIDENCE DESC="经审查认定的案件事实及证据">
+		<![CDATA[经依法(侦|审)查查明|认定上述事实(的)?证据|经我局侦查]]>
+	</CASE_FACT_EVIDENCE>
+	<HANDLE_OPINION DESC="处理意见">
+		<![CDATA[综上所述]]>
+	</HANDLE_OPINION>
+	<SIGNATURE DESC="落款日期">
+		<![CDATA[此致]]>
+	</SIGNATURE>
+</ParaLabel>

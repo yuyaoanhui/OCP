@@ -1,0 +1,35 @@
+<ParaLabel>
+	<TITLE DESC="标题">
+		<![CDATA[检察院$#意见书$]]>
+	</TITLE>
+	<SUSPECT_PROCESS DESC="受案和审查过程">
+		<![CDATA[受案[和及]审[查结]过程]]>
+	</SUSPECT_PROCESS>
+	<SUSPECT_BASE_INFO DESC="犯罪嫌疑人基本情况">
+		<![CDATA[犯罪嫌疑人(及[\u4e00-\u9fa5]*)?(的)?基本情况]]>
+	</SUSPECT_BASE_INFO>
+	<SOLVE_PROCESS DESC="发案、立案、破案经过">
+		<![CDATA[发案、立案[、和及]破案(经过|过程)]]>
+	</SOLVE_PROCESS>
+	<CASE_FACT_EVIDENCE DESC="经审查认定的案件事实及证据">
+		<![CDATA[审查(后)?认定的(案件)?事实及证据|侦查机关认定的(案件)?事实|案件事实及认定[证依]据]]>
+	</CASE_FACT_EVIDENCE>
+	<REAUTHEN_REASON DESC="提请复核或复议的理由及根据">
+		<![CDATA[(提请|要求)(复核|复议)的理由及根据]]>
+	</REAUTHEN_REASON>
+	<HANDLE_OPINION DESC="处理意见">
+		<![CDATA[(处理意见|审查意见|承办人意见)]]>
+	</HANDLE_OPINION>
+	<QUES_TO_EXPLAIN DESC="需要说明的问题">
+		<![CDATA[需要说明的问题]]>
+	</QUES_TO_EXPLAIN>
+	<RISK_ANALYSIS DESC="社会危险性">
+		<![CDATA[社会危险性分析$|逮捕必要性说明$]]>
+	</RISK_ANALYSIS>
+	<RISK_ASSES_PLAN DESC="办案风险评估及预案">
+		<![CDATA[办案风险评估及预案]]>
+	</RISK_ASSES_PLAN>
+	<SIGNATURE DESC="落款日期">
+		<![CDATA[承办人[:：]]]>
+	</SIGNATURE>
+</ParaLabel>

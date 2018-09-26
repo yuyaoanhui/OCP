@@ -1,0 +1,35 @@
+<ParaLabel>
+	<TITLE DESC="标题">
+		<![CDATA[检察院$#意见书$]]>
+	</TITLE>
+	<SUSPECT_BASE_INFO DESC="犯罪嫌疑人基本情况">
+		<![CDATA[犯罪嫌疑人基本情况]]>
+	</SUSPECT_BASE_INFO>
+	<SOLVE_PROCESS DESC="发案、立案、破案经过">
+		<![CDATA[发案、立案、破案(经过|过程)]]>
+	</SOLVE_PROCESS>
+	<CASE_FACT_EVIDENCE DESC="经审查认定的案件事实及证据">
+		<![CDATA[对案件事实的认定及证据]]>
+	</CASE_FACT_EVIDENCE>
+	<ASK_REAUTHEN_REASON DESC="提请复核或复议的理由及根据">
+		<![CDATA[(提请|要求)(复核|复议)的理由及根据]]>
+	</ASK_REAUTHEN_REASON>
+	<REVIEW_FACT_EVIDENCE DESC="经复核或复议认定的的案件事实及证据">
+		<![CDATA[经复(议|核)认定的案件事实及证据]]>
+	</REVIEW_FACT_EVIDENCE>
+	<QUES_TO_EXPLAIN DESC="需要说明的问题">
+		<![CDATA[需要说明的问题]]>
+	</QUES_TO_EXPLAIN>
+	<INVESTIGATE_FACT_AND_REASON DESC="侦查机关认定的案件事实及理由">
+		<![CDATA[侦查机关认定的案件事实及理由]]>
+	</INVESTIGATE_FACT_AND_REASON>
+	<REASON_NOT_ARREST DESC="原不批准逮捕的理由">
+		<![CDATA[不批准逮捕的理由]]>
+	</REASON_NOT_ARREST>
+	<HANDLE_OPINION DESC="处理意见">
+		<![CDATA[[一二三四五六七八九十][、\.]处理意见]]>
+	</HANDLE_OPINION>
+	<SIGNATURE DESC="落款日期">
+		<![CDATA[承办人[:：]]]>
+	</SIGNATURE>
+</ParaLabel>

@@ -1,4 +1,4 @@
-package com.futuredata.judicature.architecture.controller;
+package com.ocp.judicature.architecture.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.futuredata.api.PaladinApi;
+import com.ocp.api.PaladinApi;
 import com.ocp.base.controller.AbstractBaseController;
 import com.ocp.base.result.BaseResultCode;
 import com.ocp.common.result.WebApiResult;

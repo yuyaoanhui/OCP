@@ -1,4 +1,4 @@
-package com.futuredata.judicature.shellrun;
+package com.ocp.judicature.shellrun;
 
 import org.mybatis.generator.api.ShellRunner;
 

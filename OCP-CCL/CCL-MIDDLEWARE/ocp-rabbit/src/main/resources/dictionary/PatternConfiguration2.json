@@ -1,0 +1,1713 @@
+{
+  "info_夫妻一方发生不正当关系且恶意转移夫妻共同财产（如何分割）": {
+    "Name": "一方发生不正当关系且恶意转移夫妻共同财产（如何分割）",
+    "Weight": 0.333,
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "夫妻关系存续期间",
+        "Weight": 1,
+        "Pattern": "(婚姻|夫妻)(关系)?(存续|持续)?(期间|期)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不正当男女关系",
+        "Weight": 1,
+        "Pattern": "不正当|情人|小三|婚外情|包养",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "转移夫妻共同财产",
+        "Weight": 1,
+        "Pattern": "(转移).{0,5}财产",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_债权人因债务人违约要求提前还款，法院财产保全后该笔债务产生的利息债务人是否需要承担": {
+    "Name": "债权人因债务人违约要求提前还款，法院财产保全后该笔债务产生的利息债务人是否需要承担",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）弋民一初字第01174号",
+    "Children": [
+      {
+        "Name": "提前还款",
+        "Weight": 1,
+        "Pattern": "提前(还款|还清|结款)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "财产保全",
+        "Weight": 1,
+        "Pattern": "财产保全|保全措施|实施保全",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "利息",
+        "Weight": 1,
+        "Pattern": "利息",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_买卖双方签订卖方自制且没有经过主管部门备案的合同，是否成立房屋买卖合同关系？": {
+    "Name": "买卖双方签订卖方自制且没有经过主管部门备案的合同，是否成立房屋买卖合同关系？",
+    "Weight": 1,
+    "Condition": 0.9,
+    "AY": "房屋买卖纠纷",
+    "Cases": "(2016)皖1503民初2272号 （2015）济民一终字第1442号 （2015）六民一终字第01062号 （2016）皖1503民初2420号",
+    "Children": [
+      {
+        "Name": "卖方自制且没有经过主管部门备案的合同",
+        "Weight": 1,
+        "Pattern": "(格式|自制)合同[^.;。；、，,]*(没有|无|未)[^.;。；、，,]*(备案|登记|注册)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_父母帮子女偿还债务且没有借贷合意凭证的法律关系认定": {
+    "Name": "父母帮子女偿还债务且没有借贷合意凭证的法律关系认定",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "(2014)宁民一初字第00290号 （2014）固民一初字第00688号 (2014)庐民一初字第03199号 （2014）包民一初字第00268号",
+    "Children": [
+      {
+        "Name": "没有借条",
+        "Weight": 1,
+        "Pattern": "(无|没有).{0,5}(借条|借据|凭证|欠条)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "债权人和债务人是直系亲属",
+        "Weight": 1,
+        "Pattern": "(((原被告)(是|系))|((原告|被告|上诉人|被上诉人)(.){0,3}(与|是|系)(原告|被告|上诉人|被上诉人)(.){0,3}(的)?)|((.){0,3}与(.){0,4}))(直系亲属|母子|父子|儿子|女儿|孙子|孙女|之子|之女|之父|母亲|父亲|爷爷|奶奶|外婆|祖父|祖母|母女)(关系|[;；，,。]|$)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方经营业务产生债务（性质认定）": {
+    "Name": "一方经营业务产生债务",
+    "Weight": 1,
+    "Pattern": "[^共同]经营[^，；。]*债务",
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）花民一初字第00101号 （2014）怀民一初字第01582号 （2012）包民一初字第01899号 （2013）舒民一初字第00475号 （2013）谯民一初字第01612号 （2014）太民一初字第00604号 （2012）定民一初字第01503号 （2013）包民一初字第00072号",
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方账户流水账结存款项（权属认定）": {
+    "Name": "一方账户流水账结存款项（权属认定）",
+    "Weight": 0.333,
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "夫妻关系存续期间",
+        "Weight": 1,
+        "Pattern": "(婚姻|夫妻)(关系)?(存续|持续)?(期间|期)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "一方账户流水账结存款项",
+        "Weight": 1,
+        "Pattern": "账户|结存",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "夫妻共同财产认定",
+        "Weight": 1,
+        "Pattern": "共同财产",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_对违约方提起诉讼所支付的律师费能付要求违约方承担": {
+    "Name": "对违约方提起诉讼所支付的律师费能付要求违约方承担",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2015）寿民二初字第00121号 （2012）镜民一初字第00667号 （2014）庐民一初字第01149号 （2015）相民一初字第00452号 （2014）南民一初字第01840号 （2015）庐民一初字第00505号 （2015）铜官民二初字第00349号 （2012）芜中民一初字第00167号 （2012）相民一初字第00385号 （2012）相民一初字第00386号 （2014）镜民一初字第01174号 （2014）潜民一初字第02745号 （2012）相民一初字第00783号 （2012）鸠民一初字第00457号 （2014）庐民一初字第03305号",
+    "Children": [
+      {
+        "Name": "违约",
+        "Weight": 1,
+        "Pattern": "违约",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "律师费",
+        "Weight": 1,
+        "Pattern": "(承担|支付)[^。，,;；]*律师费|律师费[^。，,;；]*(承担|支付)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_买方已按照房屋预约合同支付定金，卖方已将房屋交付使用（是否成立房屋买卖合同关系）": {
+    "Name": "买方已按照房屋预约合同支付定金，卖方已将房屋交付使用（是否成立房屋买卖合同关系）",
+    "Weight": 0.33,
+    "LogicLabel": "AND",
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2015）新民初字第377号 （2016）苏0116民初6762号 （2014）连民终字第0605号 （2014）深中法房终字第652号 （2013）深南法民三初字第558号 （2014）深中法房终字第1669号",
+    "Children": [
+      {
+        "Name": "预购合同",
+        "Weight": 1,
+        "Pattern": "(预购|预约)[^.;。；、]*合同",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "支付订金",
+        "Weight": 1,
+        "Pattern": "支付[^.;。；、]*(预约|定金|订金)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "交付",
+        "Weight": 1,
+        "Pattern": "交付",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "不得出现没有交付",
+        "Weight": 0.1,
+        "Paragraph": "all",
+        "LogicLabel": "NOT",
+        "Children": [
+          {
+            "Name": "未交付",
+            "Weight": 1,
+            "Pattern": "(没有|未|拒绝 )[^,.;，。；、]*(交付|订金|定金)",
+            "Paragraph": "all",
+            "LogicLabel": "AND",
+            "Condition": 0.99
+          }
+        ],
+        "Condition": 0.99
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_夫妻一方分居前后产生的债务（性质认定）": {
+    "Name": "一方分居前后产生的债务（性质认定）",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2014）巢民一初字第00802号 （2013）六裕民一初字第00052号 （2014）广民一初字第00119号 （2013）凤民一初字第00165号 （2012）宿中民一再终字第00034号 （2013）合民一终字第03465号",
+    "Children": [
+      {
+        "Name": "债务",
+        "Weight": 1,
+        "Pattern": "(借|贷|欠|债务)[^,.;，。；、]*(元).{0,15}[^不]",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "分居",
+        "Weight": 1,
+        "Pattern": "分居|离家|独自生活",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不得出现无共同债务",
+        "Weight": 0.1,
+        "Paragraph": "all",
+        "LogicLabel": "NOT",
+        "Children": [
+          {
+            "Name": "无共同债务",
+            "Weight": 1,
+            "Pattern": "(无|没有|未|不存在|放弃)[^,.;，。；、]*(债|借|贷)",
+            "Paragraph": "all",
+            "Condition": 0.99,
+            "LogicLabel": "AND"
+          }
+        ],
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_部分婚前财产与夫妻共同财产发生混同（如何分割）": {
+    "Name": "关系存续期间",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "婚前财产",
+        "Weight": 1,
+        "Pattern": "婚前财产",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "混同",
+        "Weight": 1,
+        "Pattern": "婚前.{0,20}混同",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不允许出现该节点",
+        "Condition": 0.99,
+        "LogicLabel": "NOT",
+        "Weight": 0,
+        "Children": [
+          {
+            "Pattern": "(没有|无).{0,3}混同",
+            "Paragraph": "all",
+            "Weight": 1,
+            "LogicLabel": "AND",
+            "Name": "没有混同财产"
+          },
+          {
+            "Pattern": "混同.{0,1}不予",
+            "Paragraph": "all",
+            "Weight": 1,
+            "LogicLabel": "AND",
+            "Name": "没有混同财产"
+          }
+        ]
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_开发商委托代理机构销售楼盘，买方将购房款支付给无权收取购房款的代理机构（是否构成违约）": {
+    "Name": "开发商委托代理机构销售楼盘，买方将购房款支付给无权收取购房款的代理机构（是否构成违约）",
+    "Weight": 0.5,
+    "LogicLabel": "AND",
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2016）苏08民终201号 （2015）昆花民初字第00827号 （2015）苏中民终字第06414号",
+    "Children": [
+      {
+        "Name": "委托销售",
+        "Weight": 1,
+        "Pattern": "(委托|代理|经理)[^.;。；、]*(售|卖)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "无权收取购房款",
+        "Weight": 1,
+        "Pattern": "(无权|不能)收取[^.;。；、]*(金|钱|款|元)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_质权人取得质押金钱专门账户控制权，该账户内资金余额发生浮动（是否影响金钱质权的设立）": {
+    "Name": "质权人取得质押金钱专门账户控制权，该账户内资金余额发生浮动（是否影响金钱质权的设立）",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）铜官民二初字第00989号 （2014）南民一初字第538号",
+    "Children": [
+      {
+        "Name": "专门账户",
+        "Weight": 1,
+        "Pattern": "(专门|特殊)账户|专户",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "保证金",
+        "Weight": 1,
+        "Pattern": "(质押|担保|保证)[^。，,;；]*(金|款|元)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "质权",
+        "Weight": 1,
+        "Pattern": "质权",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方是否需要承担另一方自认与他人的债务？": {
+    "Name": "夫妻一方是否需要承担另一方自认与他人的债务？",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "(2012)广民一初字第00868号 （2013）瑶民一初字第01324号 （2013）南民一初字第01600号 (2014)广民一初字第01652号 （2013）巢民一初字第00070号 (2014)庐民一初字第00042号 （2014）宣中民一初字第00156号 (2013)广民一初字第01215号 (2014)宁民一初字第00127号 （2014）马民一初字第00017号",
+    "Children": [
+      {
+        "Name": "外所负债务",
+        "Weight": 1,
+        "Pattern": "外所负债务",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "夫妻",
+        "Weight": 1,
+        "Pattern": "夫妻",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_经济往来频繁的双方没有书面借款凭证能否认定口头约定达成借贷关系": {
+    "Name": "经济往来频繁的双方没有书面借款凭证能否认定口头约定达成借贷关系",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）相民一初字第01095号 (2013)铜官民二初字第01211号 （2013）芜中民一初字第00197号 （2014）天民一初字第00990号 （2013）镜民一初字第00272号 （2014）铜民二初字第00408号 (2014)瑶民一初字第00696号 （2014）枞民一初字第00319号",
+    "Children": [
+      {
+        "Name": "私自",
+        "Weight": 1,
+        "Pattern": "频繁",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "无借条",
+        "Weight": 1,
+        "Pattern": "(无|没有).{0,5}(借条|借据|凭证)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_情侣关系的一方向另一方事后补写的借条能否证明存在真实的借贷关系": {
+    "Name": "情侣关系的一方向另一方事后补写的借条能否证明存在真实的借贷关系",
+    "Weight": 0.5,
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2016）皖01民终945号 （2015）瑶民一初字第01086号 （2015）来民一初字第00721号 （2016）皖01民终12号 （2016）皖0202民初3478号 （2016）皖0302民初1347号 （2015）滁民一终字第01389号 （2014）田民一初字第01180号 （2015）淮民二终字第00254号 （2016）皖1503民初616号",
+    "Children": [
+      {
+        "Name": "情侣关系",
+        "Weight": 1,
+        "Pattern": "情侣|男女朋友",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "借条",
+        "Weight": 1,
+        "Pattern": "借条",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻未分居期间夫妻一方以另一方证件开设并实际控制的股权交易账户进行密码修改并支取金额（是否转移夫妻共同财产）": {
+    "Name": "夫妻未分居期间一方以另一方证件开设并实际控制的股权交易账户进行密码修改并支取金额（是否转移夫妻共同财产）",
+    "Weight": 1,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "支取金额",
+        "Weight": 1,
+        "Pattern": "(名义|形式|身份)[^.。、]*(取|拿|得)[^,.;，。；]*(金|款|元)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_公司与股东财产发生混同，债务人多次借款后向股东出具了一张总借条，能否证明股东与债务人之间存在真实借贷关系": {
+    "Name": "公司与股东财产发生混同，债务人多次借款后向股东出具了一张总借条，能否证明股东与债务人之间存在真实借贷关系",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）镜民一初字第03069号",
+    "Children": [
+      {
+        "Name": "财产混同",
+        "Weight": 1,
+        "Pattern": "(公司|企业|单位)[^。，,;；]*(产生|发生|具有)[^。，,;；]*(混同|混合|重叠|重合)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "多次借款",
+        "Weight": 1,
+        "Pattern": "(多次)[^。，,;；]*向[^。，,;；]*(借|贷)|向[^。，,;；]*(多次)[^。，,;；]*(借|贷)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "一张借条",
+        "Weight": 1,
+        "Pattern": "(借条|合同|协议)[^。，,;；]*(一张|一份)|(一张|一份)[^。，,;；]*(借条|合同|协议)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方使用共同财产与第三人购买房屋，所有权人为一方与第三人（是否为夫妻共同财产，如何分割）": {
+    "Name": "一方使用共同财产与第三人购买房屋，所有权人为一方与第三人（是否为夫妻共同财产，如何分割）",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2014）镜民一初字第02048号 （2013）镜民一初字第01899号 （2013）瑶民一初字第04521号 （2014）庐民一初字第03278号 （2014）池民一终字第00034号",
+    "Children": [
+      {
+        "Name": "与第三方购买",
+        "Weight": 1,
+        "Pattern": "(与|和|跟|同)[^,.;，。；]*买[^,.;，。；]*(房|屋)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "所有权人",
+        "Weight": 1,
+        "Pattern": "(有)[^,.;，。；、]*(产权|所有权)|(所有权人|产权人)为",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_合作经营合同中约定合同一方不承担亏损": {
+    "Name": "合作经营合同中约定合同一方不承担亏损",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Children": [
+      {
+        "Name": "合伙经营",
+        "Weight": 1,
+        "Pattern": "合伙经营",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不承担亏损",
+        "Weight": 1,
+        "Pattern": "不承担亏损",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_债务人非因同一事实涉嫌刑事犯罪，是否需要中止诉讼？": {
+    "Name": "关系存续期间",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Children": [
+      {
+        "Name": "犯罪",
+        "Weight": 1,
+        "Pattern": "涉嫌.{0,4}犯罪",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "与本案无关",
+        "Weight": 1,
+        "Pattern": "与本案.{0,2}无关",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不允许出现该节点",
+        "Condition": 0.99,
+        "LogicLabel": "NOT",
+        "Weight": 0,
+        "Children": [
+          {
+            "Pattern": "中止.{0,10}不能成立",
+            "Paragraph": "all",
+            "Weight": 1,
+            "LogicLabel": "AND",
+            "Name": "不能成立"
+          },
+          {
+            "Pattern": "非法集资",
+            "Paragraph": "all",
+            "Weight": 1,
+            "LogicLabel": "AND",
+            "Name": "非法集资"
+          }
+        ]
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_债务人承认借款但没有证据证明已经偿还的处理": {
+    "Name": "债务人承认借款但没有证据证明已经偿还的处理",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2013）贵民一初字第01370号 （2013）庐民一初字第01176号 （2013）庐民一初字第01177号 （2014）太民一初字第03402号 （2014）淮民一初字第00148号 （2014）宁民一初字第02855 （2014）宁民一初字第00085号 （2014）六民二初字第00443号 （2014）霍民二初字第00941号",
+    "Children": [
+      {
+        "Name": "声称已经还款",
+        "Weight": 1,
+        "Pattern": "(称|说|认)[^。，,;；]*已[^。，,;；]*(付|偿|还)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "没有证据证明已经偿还",
+        "Weight": 1,
+        "Pattern": "(没有|无法|未)[^。，,;；]*(证明|证据|人证|凭据|出具)[^。，,;；]*(已)?[^。，,;；]*偿还|(未|没有)(得到|获得|得)[^。，,;；]*认",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_借款合同没有约定延期还款的利率": {
+    "Name": "借款合同没有约定延期还款的利率",
+    "Weight": 0.5,
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2013）瑶民一初字第02733号 （2014）东民一初字第00502号",
+    "Children": [
+      {
+        "Name": "延期还款",
+        "Weight": 1,
+        "Pattern": "(延|展)期还款",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "借款合同没有约定延期还款的利率",
+        "Weight": 1,
+        "Pattern": "未约定((延期|展期)?还款期限(及|和)利息)|未约定逾期(利息|利率)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_担保人以有限公司股票为债务人借款提供担保但未办理出质登记，是否需要承担违约责任": {
+    "Name": "担保人以有限公司股票为债务人借款提供担保但未办理出质登记，是否需要承担违约责任",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）南民一初字第538号 （2014）宜秀民一初字第00720号",
+    "Children": [
+      {
+        "Name": "出质登记",
+        "Weight": 1,
+        "Pattern": "(无|未|没有)[^。，,;；]*(出质登记|登记出质)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "财产保全",
+        "Weight": 1,
+        "Pattern": "(以|用|把)[^。，,;；]*(股权|股票)[^。，,;；]*(质|保|押)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "违约",
+        "Weight": 1,
+        "Pattern": "违约",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方使用直系亲属银行卡以致与夫妻财产与发生混同（夫妻共同财产如何认定和分割）": {
+    "Name": "关系存续期间",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "亲属银行卡",
+        "Weight": 1,
+        "Pattern": "(父亲|母亲|父母|亲属).{0,3}银行卡",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "混同",
+        "Weight": 1,
+        "Pattern": "混同",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不允许出现该节点",
+        "Weight": 0,
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "Children": [
+          {
+            "Name": "没有混同财产",
+            "Weight": 1,
+            "Pattern": "(没有|无|未).{0,3}混同",
+            "Paragraph": "all",
+            "Condition": 0.99,
+            "LogicLabel": "AND"
+          },
+          {
+            "Name": "没有混同财产",
+            "Weight": 1,
+            "Pattern": "混同.{0,1}不予",
+            "Paragraph": "all",
+            "Condition": 0.99,
+            "LogicLabel": "AND"
+          }
+        ],
+        "LogicLabel": "NOT"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻双方各抚养一个子女产生的抚养费差额（是否需要补偿）": {
+    "Name": "夫妻双方各抚养一个子女产生的抚养费差额（是否需要补偿）",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）太民一初字第00675号 （2013）鸠民一初字第01400号 （2013）巢民一初字第01482号 （2013）滁民一终字第00780号 （2014）宿中民一终字第00589号 （2014）芜中民一终字第00182号 （2013）鸠民一初字第01400号 （2013）宜民一终字第01076号 （2015）淮民一终字第00081号",
+    "Children": [
+      {
+        "Name": "有一对子女",
+        "Weight": 1,
+        "Pattern": "有(一对|一双|两个)(子女|孩子|儿子|女儿)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "抚养费差额",
+        "Weight": 1,
+        "Pattern": "抚养费",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不得出现不予离婚",
+        "Weight": 0.1,
+        "Paragraph": "all",
+        "LogicLabel": "NOT",
+        "Children": [
+          {
+            "Name": "无共同债务",
+            "Weight": 1,
+            "Pattern": "(不予|不允|不准|不支持)[^,.;，。；、]*(离婚)",
+            "Paragraph": "judgement_content",
+            "Condition": 0.99,
+            "LogicLabel": "AND"
+          }
+        ],
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_持有记载出借人姓名与其姓名同音不同字的借条（是否具有诉讼主体资格）": {
+    "Name": "持有记载出借人姓名与其姓名同音不同字的借条（是否具有诉讼主体资格）",
+    "Weight": 1.0,
+    "Pattern": "(字|姓名)不同|不同(字|姓名)",
+    "Paragraph": "all",
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）咸中民终字第00050号 （2016）皖1503民初3456号 （2014）怀民一初字第03812号 （2016）皖1102民初1673号 （2011）无民初字第01038号 （2016）皖1502民初1626号 （2016）皖0828民初840号 （2015）皖民一终字第00121号  （2015）舒民二初字第00683号 （2012）长民一初字第00545号",
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方以夫妻共同财产为情人购买的房屋（权属如何认定）": {
+    "Name": "一方以夫妻共同财产为情人购买的房屋（权属如何认定）",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "夫妻共同财产",
+        "Weight": 1,
+        "Pattern": "共同|共有",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "情人",
+        "Weight": 1,
+        "Pattern": "婚外情|包养|情妇|情人|第三者|不正当|出轨|小三",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "买房",
+        "Weight": 1,
+        "Pattern": "(买|购|给)[^,.;，。；、]*的(房|屋)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_婚姻存续期间所欠债务，借款协议离婚后个人签署": {
+    "Name": "关系存续期间",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Children": [
+      {
+        "Name": "离婚补借条",
+        "Weight": 1,
+        "Pattern": "离婚.{0,10}补.{0,10}(欠条|借条|借据|凭证)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "夫妻关系存续期间",
+        "Weight": 1,
+        "Pattern": "夫妻关系存续期间",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻共同财产购买一方婚前已取得单位福利房过半产权的房屋（权属如何认定，如何分割）": {
+    "Name": "夫妻共同财产购买一方婚前已取得单位福利房过半产权的房屋",
+    "Weight": 0.5,
+    "LogicLabel": "AND",
+    "AY": "离婚纠纷",
+    "Cases": "（2012）宿埇民一初字第01850号 （2012）烈民一初字第00716号 （2014）镜民一初字第02422号 （2012）阜民一终字第01082号",
+    "Children": [
+      {
+        "Name": "已取得产权",
+        "Weight": 1,
+        "Pattern": "(得|已|有)[^,.;，。；、]*(部分|半|\\%)[^,.;，。；、]*(产权|所有权)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "单位福利房",
+        "Weight": 1,
+        "Pattern": "(福利|单位|公司)[^,.;，。；、<>《》]*房",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_夫妻双方离婚后同居期间产生的债务（性质认定）": {
+    "Name": "离婚后同居产生债务",
+    "Weight": 0.5,
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Cases": "（2015）长民一初字第00678号 （2013）谯民一初字第02449号",
+    "Children": [
+      {
+        "Name": "离婚后同居",
+        "Weight": 1.0,
+        "Pattern": "离婚[^。；;,，]*(同居|(共同|一起)生活)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "共同生活期间借款",
+        "Weight": 1.0,
+        "Pattern": "共同生活期间[^。；;]*借款|借款(均|主要)?用于[^。；;,，]*(同居|(共同|一起)生活)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_未领取结婚证且未举办婚礼的双方是否形成事实婚姻关系，一方私自将共同房屋过户至他人名下，过户行为是否有效": {
+    "Name": "事实婚姻关系",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）南民一初字第01875号 (2014)六金民一初字第01924号 （2014）包民一初字第01341号 （2013）包民一初字第02374号",
+    "Children": [
+      {
+        "Name": "企业资产",
+        "Weight": 1.0,
+        "Pattern": "事实婚姻",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "企业资产",
+        "Weight": 1.0,
+        "Pattern": "过户",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "企业资产",
+        "Weight": 1.0,
+        "Pattern": "隐瞒|擅自|私自",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻双方离婚诉讼前都存在大量资金流转（是否转移夫妻共同财产）": {
+    "Name": "双方离婚诉讼前都存在大量资金流转（是否转移夫妻共同财产）",
+    "Weight": 0.333,
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "离婚诉讼前",
+        "Weight": 1,
+        "Pattern": "诉讼前",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "双方大量资金流转",
+        "Weight": 1,
+        "Pattern": "(双.{0,10}转移)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "转移夫妻共同财产",
+        "Weight": 1,
+        "Pattern": "(转|转移){0,5}财产",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方向其情人借款，情人能否向夫妻另一方主张还款？": {
+    "Name": "夫妻一方向其情人借款，情人能否向夫妻另一方主张还款？",
+    "Weight": 1,
+    "Pattern": "情人关系",
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2015）观民一初字第00213号 （2015）岳民一初字第01955号 （2013）固民一初字第00655号 （2017）皖05民终427号 （2015）合民一终字第01369号 （2016）皖05民终228号 （2016）皖1721民初1526号 （2015）相民一初字第03078号",
+    "LogicLabel": "AND"
+  },
+  "info_私自低价出售夫妻共有房屋是否需要赔偿": {
+    "Name": "抚养费",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2014）定民一初字第01388号 （2013）临民一初字第03145号 （2013）埇民一初字第00575号 （2012）瑶民一初字第01561号 （2014）蜀民一初字第00344号",
+    "Children": [
+      {
+        "Name": "私自",
+        "Weight": 1,
+        "Pattern": "私自|单独|隐瞒|隐藏",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "出售",
+        "Weight": 1,
+        "Pattern": "出售|售出|卖(了|掉|出|给)|转卖|转移|变卖|处分",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "夫妻共有房屋",
+        "Weight": 1,
+        "Pattern": "(共有|共同)(的)?(房屋|房产)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_网络支付交易平台记录能否证明借款事实": {
+    "Name": "网络证明借款事实",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2012）镜民一初字第01755号",
+    "Children": [
+      {
+        "Name": "网络支付交易平台",
+        "Weight": 1.0,
+        "Pattern": "(网上(银行)?(转账单|转账记录|电子回单|(个人)?转账汇款电子回单)|网上电子银行回单)(不能|也不能)?证明[^。；;,，]*借(款|贷)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方因不正当男女关系是否对无过错方承担精神损害赔偿": {
+    "Name": "一方因不正当男女关系是否对无过错方承担精神损害赔偿",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）郎民一初字第01202号 （2013）萧民一初字第03185号 （2013）田民一初字第02754号 （2012）埇民一初字第03820号 （2012）宁民一初字第01243号 （2013）埇民一初字第04436号 （2012）定民一初字第00543号 （2014）濉民一初字第00284号 （2013）郎民一初字第00749号 （2014）南民一初字第1072号",
+    "Children": [
+      {
+        "Name": "不正当男女关系",
+        "Weight": 1,
+        "Pattern": "(不正当|非法|地下)(的)?(男女|婚外情|包养|情妇|两性)?关系",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "精神损害赔偿",
+        "Weight": 1,
+        "Pattern": "精神(损害|损失|损伤|抚慰)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_没有借款和书面款项实际交付凭证的法律关系如何认定": {
+    "Name": "没有借款和书面款项实际交付凭证的法律关系如何认定",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）天民一初字第00990号",
+    "Children": [
+      {
+        "Name": "借条",
+        "Weight": 1,
+        "Pattern": "(无|没有).{0,5}(借条|借据|凭证|欠条)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "出售",
+        "Weight": 1,
+        "Pattern": "(无|没有).{0,10}(打款|收款)凭证",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方父母所有房屋婚后登记在夫妻一方名下，该房屋拆迁的安置房权属如何认定": {
+    "Name": "一方父母所有房屋婚后登记在一方名下，该房屋拆迁的安置房权属",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2014）包民一初字第03431号 （2014）镜民一初字第02254号 （2014）固民一初字第00807号 （2014）芜经开民一初字第00735号 （2015）庐民一初字第00162号 （2015）淮民一再终字第00005号",
+    "Children": [
+      {
+        "Name": "登记在一方名下",
+        "Weight": 1,
+        "Pattern": "登记(在|名)|转[^,.;，。；、]*(所有|名下)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "一方父母所有房屋",
+        "Weight": 1,
+        "Pattern": "(父母|父|母)[^,.;，。；、]*(房|屋)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "安置房",
+        "Weight": 1,
+        "Pattern": "安置|回迁|拆迁",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_记载交易用途为借款的银行汇款单能否证明存在借贷关系": {
+    "Name": "关系存续期间",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Children": [
+      {
+        "Name": "私自",
+        "Weight": 1,
+        "Pattern": "(汇款|电子凭).{0,10}(留言|备注).{0,3}借",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "无借条",
+        "Weight": 1,
+        "Pattern": "(无|没有).{0,5}(借条|借据|凭证)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_分居期间用于经营的借款（性质认定）": {
+    "Name": "分居期间用于经营的借款（性质认定）",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）相民一初字第00268号 （2014）定民一初字第01484号",
+    "Children": [
+      {
+        "Name": "分居",
+        "Weight": 1,
+        "Pattern": "分居|离家|独自生活",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "用于经营",
+        "Weight": 1,
+        "Pattern": "(借|贷|债)[^,.;，。；、]*(经营|管理|周转|业务)|(经营|管理|周转|业务)[^,.;，。；、]*(借|贷|债)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_多张借条之间出现混同的借贷金额认定": {
+    "Name": "多张借条之间出现混同的借贷金额认定",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）淮民二初字第00160号 （2014）合民一终字第01226号",
+    "Children": [
+      {
+        "Name": "出具多张借条",
+        "Weight": 1,
+        "Pattern": "(出具|出示|提供|给|有)[^。，,;；]*(借条|白条|借款|贷款|借贷)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "借条出现混同",
+        "Weight": 1,
+        "Pattern": "(借条|证明|证据|借款)[^。，,;；]*(有|存|含|是)?[^。，,;；]*(混合|混同|混乱|重合)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_合同约定受托人向委托人支付房产转让款，然后受托人以委托人名义与他人签订房屋买卖合同，委托人与受托人之间成立什么法律关系？": {
+    "Name": "合同约定受托人向委托人支付房产转让款，然后受托人以委托人名义与他人签订房屋买卖合同，委托人与受托人之间成立什么法律关系？",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2013）郾民初字第01456号 （2014）穗中法民五终字第1059号 （2014）锦审二民终再字第00040号",
+    "Children": [
+      {
+        "Name": "合同约定受托人向委托人支付房产转让款",
+        "Weight": 1,
+        "Pattern": "(合同|协议)[^.;。；、]*(向|对|给|付|交)[^.;。；、，,]*(转让款|房款)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "以委托人名义与他人签订房屋买卖合同",
+        "Weight": 1,
+        "Pattern": "(以|用)[^.;。；、]*(名义|名字)[^.;。；、]*(买卖)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "构成什么关系",
+        "Weight": 1,
+        "Pattern": "(构成|形成|成立)[^.;。；、]*(关系)|(关系)[^.;。；、]*(构成|形成|成立)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_存在行政违法行为的房产能否变更登记给买方": {
+    "Name": "存在行政违法行为的房产能否变更登记给买方",
+    "Weight": 0.5,
+    "LogicLabel": "AND",
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2015）池民三终字第00074号 （2014）皖民四终字第00095号 （2015）驻民四终字第562号 （2013）深中法房终字第2746号 （2015）东二法民一初字第1207号",
+    "Children": [
+      {
+        "Name": "存在行政违法的房屋",
+        "Weight": 1,
+        "Pattern": "(房|屋|楼|铺)[^.;。；、没有 无]*(违法|违规|不合法)行为",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "变更登记",
+        "Weight": 1,
+        "Pattern": "(变|改|换|转)[^.;。；、]*(登记|名下)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_欠款本息作为房屋已付购房款签订房屋买卖合同（效力认定）": {
+    "Name": "欠款本息作为房屋已付购房款签订房屋买卖合同（效力认定）",
+    "Weight": 0.5,
+    "LogicLabel": "AND",
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2015）深南法民三初字第253号 （2015）揭惠法民一初字第124号 （2016）鲁1322民初2105号 （2013）沪一中民二（民）终字第3363号 （2015）清中法审监民再字第3号 （2014）鼓民初字第4181号 （2015）济民再终字第103号",
+    "Children": [
+      {
+        "Name": "欠款本息作为购房款",
+        "Weight": 1,
+        "Pattern": "(欠款)[^.;。；、]*(购|买|抵|押)[^.;。；、,，]*(房|屋|楼|铺)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "房屋买卖合同",
+        "Weight": 1,
+        "Pattern": "(签|订)[^.;。；,，、]*(房屋买卖合同|购房协议|购房合同)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_出具人为已故夫妻一方的借条如何证明借贷关系真实性": {
+    "Name": "出具人为已故夫妻一方的借条如何证明借贷关系真实性",
+    "Weight": 0.33,
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2014）泗民一初字第03294号 （2016）皖0202民初3896号 （2015）宿中民二终字第00465号 （2013）皖民二再终字第00005号 （2016）皖1322民初4103号 （2013）田民一初字第03179号 （2015）宣民一初字第03699号 （2015）泉民一初字第01333号 （2015）禹民一初字第01293号 （2016）皖0202民初3896号",
+    "Children": [
+      {
+        "Name": "死亡",
+        "Weight": 1,
+        "Pattern": "死亡|亡故|去世",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "签字",
+        "Weight": 1,
+        "Pattern": "签字|签名|署名",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "真实性",
+        "Weight": 1,
+        "Pattern": "质疑|真实性",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_债务人向债权人转账，债权人不认可是对本借贷的还款": {
+    "Name": "债务人向债权人转账，债权人不认可是对本借贷的还款",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2013）池民一初字第00050号 （2013）蜀民一初字第01029号 （2013）六民二初字第00260号 （2015）迎民一初字第00253号 （2014）相民一初字第00653号 （2014）雨民一初字第01217号",
+    "Children": [
+      {
+        "Name": "债务人向债权人转账",
+        "Weight": 1,
+        "Pattern": "(向|对|给|有)[^。，,;；、]*(转账|转款|还款|还钱)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "不认可是对本借贷",
+        "Weight": 1,
+        "Pattern": "(非|不认|不承|不确|不同意)[^。，,;；]*(是|对|属于)?[^。，,;；]*(该|本|此|这)[^。，,;；]*(还|转|偿)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方出轨育有子女，婚生子抚养权归属": {
+    "Name": "一方出轨育有子女，婚生子抚养权归属",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2014）泉民一初字第00472号 （2012）瑶民一初字第01561号 （2014）天民一初字第02016号 （2013）来民一初字第01037号 （2012）滁民一终字第00071号",
+    "Children": [
+      {
+        "Name": "私生子",
+        "Weight": 1,
+        "Pattern": "私生(子|女|子女)|非婚生(子|女|子女)|(不|无|没有|非)[^,，。;；]*(血缘|亲子|生物|亲生)[^,，。;；]*(关系)?",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "婚生子归属",
+        "Weight": 1,
+        "Pattern": "(由|归)[^,，。;；]*抚养",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方因治疗疾病产生债务（性质认定）": {
+    "Name": "一方因治疗疾病产生债务（性质认定）",
+    "Weight": 1,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2012）巢民一初字第01204号 （2014）瑶民一初字第00238号 （2015）繁民一初字第00088号 （2014）南民一初字第00968号 （2013）潜民一初字第01109号 （2013）铜民一初字第00422号 （2012）观民一初字第00830号 （2014）颍民一初字第00281号 （2012）舒民一初字第01549号 （2012）舒民一初字第00148号",
+    "Children": [
+      {
+        "Name": "治疗疾病",
+        "Weight": 1,
+        "Pattern": "(治疗|住院|药|治病|手术|医疗)[^,.;，。；、]*(借|贷|欠|债务)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "不得出现无共同债务",
+        "Weight": 0.1,
+        "Paragraph": "all",
+        "LogicLabel": "NOT",
+        "Children": [
+          {
+            "Name": "无共同债务",
+            "Weight": 1,
+            "Pattern": "(无|没有|未|不存在|放弃)[^,.;，。；、]*(债|借|贷)",
+            "Paragraph": "all",
+            "Condition": 0.99,
+            "LogicLabel": "AND"
+          }
+        ],
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方父母所有的婚后登记在一方名下的房屋": {
+    "Name": "一方父母所有的婚后登记在一方名下的房屋",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2012）包民一初字第00567号 （2014）临民一初字第00460号 （2014）瑶民一初字第03179号 （2012）弋民一初字第01217号 （2012）包民一初字第01971号",
+    "Children": [
+      {
+        "Name": "登记在一方名下",
+        "Weight": 1,
+        "Pattern": "后[^,.;，。；、]*登记(在|名)|后[^,.;，。；、]*(转|改|换)[^,.;，。；、]*(所有|名下)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "一方父母所有房屋",
+        "Weight": 1,
+        "Pattern": "(房|屋)?[^,.;，。；、]*(父母|父|母)[^,.;，。；、]*(所有|名下)[^,.;，。；、]*(房|屋)?",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻共同财产偿还婚前个人债务（是否需要返还）": {
+    "Name": "夫妻共同财产偿还婚前个人债务",
+    "Weight": 1,
+    "Pattern": "夫妻共同财产偿还[^，]{0,10}婚前个人债务",
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "LogicLabel": "AND"
+  },
+  "info_买方已知所购买的房屋已被出租给他人，因租期未到期造成卖方逾期交房如何处理？": {
+    "Name": "买方已知所购买的房屋已被出租给他人，因租期未到期造成卖方逾期交房如何处理？",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "房屋买卖纠纷",
+    "Children": [
+      {
+        "Name": "已知所购买的房屋已被出租给他人",
+        "Weight": 1,
+        "Pattern": "[^通](知)[^.;。；、]*(房|屋|楼|铺)[^.;。；、]*(租)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "卖方逾期交房",
+        "Weight": 1,
+        "Pattern": "(超期|逾期|过期)[^.;。；、]*(交房|交付)|(交房|交付)[^.;。；、]*(超期|逾期|过期)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_起诉离婚后一方借款（性质认定）": {
+    "Name": "起诉离婚后一方借款（性质认定）",
+    "Weight": 0.5,
+    "LogicLabel": "AND",
+    "AY": "离婚纠纷",
+    "Children": [
+      {
+        "Name": "起诉后",
+        "Weight": 1,
+        "Pattern": "[^撤回](起诉|提起诉讼)后.{0,10}[^撤]",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "借款",
+        "Weight": 1,
+        "Pattern": "借|贷|欠|债务",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "Condition": 0.9
+  },
+  "info_殴打行为是否构成家庭暴力承担精神损害赔偿": {
+    "Name": "殴打行为是否构成家庭暴力承担精神损害赔偿",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": " （2013）凤民一初字第01197号 （2014）庐民一初字第03339号 （2012）谯民一初字第02992号 （2014）潜民一初字第00021号 （2013）埇民一初字第01664号 （2012）濉民一初字第01022号 （2013）肥东民一初字第1323号 （2013）合民一终字第03465号",
+    "Children": [
+      {
+        "Name": "殴打",
+        "Weight": 1,
+        "Pattern": "殴打|打骂|打了?我|致伤|虐待",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "家庭暴力",
+        "Weight": 1,
+        "Pattern": "暴力|施暴|家暴",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "精神损害",
+        "Weight": 1,
+        "Pattern": "精神(损害|损失|损伤|抚慰)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_因未办理房屋预售许可证导致房屋买卖合同无效，过错责任如何承担？": {
+    "Name": "因未办理房屋预售许可证导致房屋买卖合同无效，过错责任如何承担？",
+    "Weight": 0.5,
+    "Condition": 0.9,
+    "AY": "房屋买卖纠纷",
+    "Cases": "（2014）朝双民初字第00499号 （2014）深中法房终字第2463-2468号 （2016）豫1503民初2079号 （2012）济民再终字第8号 （2015）滨民二初字第382号 （2013）宿豫来民初字第0359号",
+    "Children": [
+      {
+        "Name": "房屋预售许可证",
+        "Weight": 1,
+        "Pattern": "(无|没有|未)[^.;。；、，,]*(房屋|商品房)预售许可证",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "房屋买卖合同无效",
+        "Weight": 1,
+        "Pattern": "(房屋)?(买卖合同|预售合同)[^.;。；、,，]*(无效|失效)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_夫妻一方因意外事故产生的债务（性质认定）": {
+    "Name": "一方因意外事故产生的债务",
+    "Weight": 1,
+    "Paragraph": "all",
+    "Condition": 0.99,
+    "AY": "离婚纠纷",
+    "Cases": "〔2012〕郎民一初字第00180号 （2015）巢民一初字第00602号 (2013）南民一初字第00872号 （2015）蒙民一初字第00199号 萧民一初字第00727号(2013) （2015）合民一终字第01634号 ",
+    "Children": [
+      {
+        "Name": "因意外事故产生债务1",
+        "Weight": 1,
+        "Pattern": "(意外事故|撞伤|摔倒|跌倒|车祸|火灾|洪水)[^。；;]*(借|债务|家庭生活)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "因意外事故产生债务2",
+        "Weight": 1,
+        "Pattern": "(借|债务|家庭生活)[^。；;]*(意外事故|撞伤|摔倒|跌倒|车祸|火灾|洪水)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "OR"
+  },
+  "info_夫妻一方抚养另一方因不正关系所生子女能否请求赔偿抚养费": {
+    "Name": "一方抚养另一方因不正关系所生子女能否请求赔偿抚养费",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "离婚纠纷",
+    "Cases": "（2013）桐民一初字第00320号 （2013）霍民一初字第02193号 （2014）太民一初字第00653号 （2012）东民一初字第00606号 （2012）临民一初字第00859号 （2013）长民一初字第00374号 （2012）全民一初字第00874号",
+    "Children": [
+      {
+        "Name": "不正当男女关系",
+        "Weight": 1,
+        "Pattern": "(不正当|非法|地下)[^,，。;；]*(男女|婚外情|包养|情妇|两性)",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "私生子",
+        "Weight": 1,
+        "Pattern": "私生(子|女|子女)|非婚生(子|女|子女)|(不|无|没有|非)[^,，。;；]*(血缘|亲子|生物|亲生)[^,，。;；]*(关系)?",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      },
+      {
+        "Name": "赔偿抚养费",
+        "Weight": 1,
+        "Pattern": "(赔偿|支付|给)[^,，。;；]*抚养费",
+        "Paragraph": "all",
+        "LogicLabel": "AND",
+        "Condition": 0.99
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_买方已知所购买的房屋已被出租给他人，房屋交付时间早于租期，买方能否按约要求卖方交付房屋？": {
+    "Name": "买方已知所购买的房屋已被出租给他人，房屋交付时间早于租期，买方能否按约要求卖方交付房屋？",
+    "Weight": 0.33,
+    "Condition": 0.9,
+    "AY": "房屋买卖纠纷",
+    "Children": [
+      {
+        "Name": "已知所购买的房屋已被出租给他人",
+        "Weight": 1,
+        "Pattern": "[^通](知)[^.;。；、]*(房|屋|楼|铺)[^.;。；、]*(租)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "房屋交付时间早于租期",
+        "Weight": 1,
+        "Pattern": "(早|迟)于[^.;。；、]*交付|交付[^.;。；、]*(迟|早)于|比交付[^.;。；、]*(早|迟)|届满",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "要求交付",
+        "Weight": 1,
+        "Pattern": "(要求|诉求|希望|求)[^.;。；、]*(交付)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_借款凭证对借款利率约定不明的利息（如何计算）": {
+    "Name": "利息不明",
+    "Weight": 0.5,
+    "Condition": 0.99,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2012）庐江民一初字第03132号 （2012）凤民一初字第01447号 (2013)合民一初字第00398号 （2013）瑶民一初字第02683号 （2012）枞民一初字第00758号 (2014)包民一初字第01687号 （2012）镜民一初字第00671号 （2012）镜民一初字第01532号 （2013）庐江民一初字第01742号 （2013）镜民一初字第00692号",
+    "Children": [
+      {
+        "Name": "存在借贷关系",
+        "Weight": 1.0,
+        "Pattern": "(存在(真实)?(的)?借贷关系)|(合法的(民间)?借贷关系(应)?(该)?受法律保护)|((借贷(法律)?|债务)关系(成立|明确|有效))|(确认(该)?借款事实)",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "借贷利率",
+        "Weight": 1.0,
+        "Pattern": "((未约定借(贷|款)利率)|(借(贷|款)利率未[^。；;,，]*约定))",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  },
+  "info_债权人将债务人尚未还请的本息合计重新出具借条（的借款金额如何计算）": {
+    "Name": "借款金额认定",
+    "Weight": 0.33,
+    "Condition": 0.95,
+    "AY": "民间借贷纠纷",
+    "Cases": "（2013）合民一初字第00233号 （2013）迎民一初字第00558号 (2015)固民一初字第00034号",
+    "Children": [
+      {
+        "Name": "原债务本息尚未还清",
+        "Weight": 1.0,
+        "Pattern": "(债务|本息|欠款|借款)[^。；;,，]*未还(清)?",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "本息合计重新出具借条",
+        "Weight": 1.0,
+        "Pattern": "重新(出具|出示)借条",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      },
+      {
+        "Name": "借钱金额",
+        "Weight": 1.0,
+        "Pattern": "借(款|钱)(金|数)额",
+        "Paragraph": "all",
+        "Condition": 0.99,
+        "LogicLabel": "AND"
+      }
+    ],
+    "LogicLabel": "AND"
+  }
+}

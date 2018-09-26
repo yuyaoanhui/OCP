@@ -1,4 +1,4 @@
-package com.futuredata.judicature;
+package com.ocp.judicature;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

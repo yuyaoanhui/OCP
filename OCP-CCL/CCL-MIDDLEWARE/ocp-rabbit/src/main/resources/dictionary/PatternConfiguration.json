@@ -1,0 +1,423 @@
+{
+  "info_夫妻一方为任职公司无偿提供借款担保": {
+    "LogicLabel": "AND",
+    "Weight": 0.25,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Children": [
+      {
+        "LogicLabel": "OR",
+        "Weight": 1.0,
+        "Condition": 0.9,
+        "Name": "存在跟夫妻有关的债务",
+        "Children":[
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "关系存续期间",
+            "Paragraph": "all",
+            "Pattern": "(夫妻|婚姻)关系存续期间"
+          },
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "夫妻",
+            "Paragraph": "courtOpinion",
+            "Pattern": "夫妻"
+          }
+        ]
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "担保",
+        "Paragraph": "courtOpinion",
+        "Pattern": "担保"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "",
+        "Paragraph": "facts",
+        "Pattern": "(公司|单位|集团)[^。;；]*(法定代表人|负责人|总经理|股东)"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "一方",
+        "Paragraph": "courtOpinion",
+        "Pattern": "一方"
+      }
+    ]
+  },
+  "info_一方虚构债务":{
+    "LogicLabel": "AND",
+    "Weight": 0.3333,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Children":[
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "夫妻关系",
+        "Condition": 0.99,
+        "Paragraph": "courtOpinion",
+        "Pattern": "夫妻|离婚"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "原告被告陈述的关键词",
+        "Condition": 0.99,
+        "Paragraph": "plaintiffAndDefendantArgs",
+        "Pattern": "恶意串通|虚构|虚假债务|(借条|欠条|借款|借贷)[^。;；]*(假|伪造)"
+      },
+      {
+        "LogicLabel": "OR",
+        "Weight": 1.0,
+        "Name": "夫妻关系",
+        "Condition": 0.99,
+        "Children":[
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "夫妻关系",
+            "Paragraph": "courtOpinion",
+            "Pattern": "恶意串通|虚构|虚假债务|(借条|欠条|借款|借贷)[^。;；]*(假|伪造)"
+          },
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "夫妻关系",
+            "Paragraph": "courtOpinion",
+            "Pattern": "借款关系不成立|([未不](能|足以))证[实明][\u4e00-\u9fa5]*(借[款贷][\u4e00-\u9fa5]*(关系|事实))|不(认可|承认)借[款贷](关系|事实)|不符合常理|借[款贷][^。；;]*(瑕疵|疑问)"
+          }
+        ]
+      }
+    ]
+  },
+  "info_夫妻一方与其亲密亲属虚构债务":{
+    "LogicLabel": "AND",
+    "Weight": 0.25,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Children":[
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "夫妻关系",
+        "Condition": 0.99,
+        "Paragraph": "courtOpinion",
+        "Pattern": "夫妻|离婚"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "原告被告陈述的关键词",
+        "Condition": 0.99,
+        "Paragraph": "plaintiffAndDefendantArgs",
+        "Pattern": "恶意串通|虚构|虚假债务|(借条|欠条|借款|借贷)[^。;；]*(假|伪造)"
+      },
+      {
+        "LogicLabel": "OR",
+        "Weight": 1.0,
+        "Name": "法官认定借贷关系不成立",
+        "Condition": 0.99,
+        "Children":[
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "关键词",
+            "Paragraph": "courtOpinion",
+            "Pattern": "(恶意|存在)串通|虚构|虚假债务|(借条|欠条|借款|借贷)[^。;；]*(假|伪造)|[与和同][\u4e00-\u9fa5]{1,4}串通"
+          },
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "借贷关系不成立",
+            "Paragraph": "courtOpinion",
+            "Pattern": "借款关系不成立|([未不](能|足以))证[实明][\u4e00-\u9fa5]*(借[款贷][\u4e00-\u9fa5]*(关系|事实))|不(认可|承认)借[款贷](关系|事实)|不符合常理|借[款贷][^。；;]*(瑕疵|疑问)"
+          }
+        ]
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "亲密亲属",
+        "Condition": 0.99,
+        "Paragraph": "defendantArgsAndCourtOpinions",
+        "Pattern": "(母子|父子|兄弟|兄妹|姐弟|姐妹|叔侄)关系|父母[^。；;,，]*赠与|亲密亲属|[为是系][\u4e00-\u9fa5]{0,8}(母子|父子|兄弟|姐妹|叔侄|之子|之女|之父|之母|的?(母亲|父亲|兄弟|哥哥|姐姐|妹妹|弟弟|舅舅|叔叔))"
+      }
+    ]
+  },
+  "info_夫妻关系存续期间":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "关系存续期间",
+    "Paragraph": "facts",
+    "Pattern": "(夫妻|婚姻)关系存续期间"
+  },
+  "info_债权人与债务人具有亲属关系":{
+    "LogicLabel": "AND",
+    "Weight": 0.33333,
+    "Condition": 0.95,
+    "Name": "亲属关系",
+    "Children":[
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 0.99,
+        "Name": "亲属关系",
+        "Paragraph": "facts",
+        "Pattern": "(原告|被告|上诉人|被上诉人|申请人)[^。；;,，]*[为是系][\u4e00-\u9fa5]{0,8}(母子|父子|兄妹|姐弟|兄弟|姐妹|叔侄|之子|之女|之父|之母|的?(母亲|父亲|兄弟|哥哥|姐姐|妹妹|弟弟|舅舅|叔叔))"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 0.99,
+        "Name": "夫妻关系",
+        "Paragraph": "facts",
+        "Pattern": "夫妻"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 0.99,
+        "Name": "恶意",
+        "Paragraph": "all",
+        "Pattern": "恶意|串通|虚构|虚假|伪造|假的|瑕疵"
+      }
+    ]
+  },
+  "info_一方冒用另一方名义共同出具借条": {
+    "LogicLabel": "AND",
+    "Weight": 0.25,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Children": [
+      {
+        "LogicLabel": "OR",
+        "Weight": 1.0,
+        "Condition": 0.9,
+        "Name": "存在跟夫妻有关的债务用途",
+        "Children":[
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "关系",
+            "Paragraph": "all",
+            "Pattern": "(夫妻|婚姻)关系存续期间|夫妻"
+          },
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "夫妻",
+            "Paragraph": "courtOpinion",
+            "Pattern": "夫妻"
+          }
+        ]
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "假冒性质",
+        "Paragraph": "defendantArgsAndCourtOpinions",
+        "Pattern": "冒充|冒用|假冒"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "被告辩称",
+        "Paragraph": "defendantArgs",
+        "Pattern": "不知情"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 1.0,
+        "Name": "",
+        "Paragraph": "courtOpinion",
+        "Pattern": "不予采信|无法证实|未能|有失借款人|非系本人|第三人|抵押|赔偿|贷款|债务|举债人|另一方"
+      }
+    ]
+  },
+
+  "info_借款时间是夫妻关系存续期间":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "关系存续期间",
+    "Paragraph": "facts",
+    "Pattern": "(借款|债务|欠款)[^；;不非。]*关系存续期间"
+  },
+
+  "info_借款用于维系不正当关系":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Name": "借款人是夫妻一方",
+    "Condition": 0.99,
+    "Paragraph": "all",
+    "Pattern": "迫于无奈|(顾及|考虑到?)名声|闹到[^。；;,，]{0,5}家|公诸于众|自然之债|不法之债|情债|青春费|青春补偿费|社会公序良俗|胁迫|强迫|威胁|((维持|维系|维护|巩固)[^。；;,，]{0,10}(不正当|非法|地下)[^。；;,，]{0,2}(婚外情|包养|两性)?关系)"
+  },
+
+  "info_款项用来维持不正当关系2":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Name": "借款人是夫妻一方",
+    "Condition": 0.99,
+    "Paragraph": "all",
+    "Pattern": "(款|费)[^。；;]*(维持|维系|维护|巩固)[^。；;,，]{0,10}(不正当|非法|地下)(婚外情|包养|情妇|两性)?关系"
+  },
+
+  "info_借款人是夫妻一方":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Name": "借款人是夫妻一方",
+    "Condition": 0.99,
+    "Paragraph": "all",
+    "Pattern": "个人债务|个人名义"
+  },
+
+  "info_出具借条时间是离婚后":{
+    "LogicLabel": "OR",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "满足一个",
+    "Children":[
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "离婚后出具借条",
+        "Paragraph": "all",
+        "Pattern": "(借条|欠条|借据|借款合同)[^。；;,，]{0,10}[,，]?[^。；;,，]{0,10}(已经?离婚|离婚后)"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "婚后出具借条",
+        "Paragraph": "all",
+        "Pattern": "离婚后[^。；;,，]{0,10}[,，]?[^。；;,，]{0,10}(订立|签订|约定|出具|补出)[^。；;,，]{0,5}(借条|欠条|借据|借款合同)"
+      }
+    ]
+  },
+
+  "info_款项实际支付":{
+    "LogicLabel": "OR",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "满足一个",
+    "Children":[
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "无借条",
+        "Paragraph": "all",
+        "Pattern": "(无|不存在|没有)[^。；;,，]{0,5}(书面借据|借据|打条|借条|欠条|借款合同)"
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Name": "形式要见",
+        "Paragraph": "all",
+        "Pattern": "(不|没有|无法)(具备|存在)借贷[^。；;,，]{0,6}形式要见"
+      }
+    ]
+  },
+
+  "info_债权人与债务人是不正当关系":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "债权人和债务人是不正当关系",
+    "Paragraph": "facts",
+    "Pattern": "婚外情|包养协议|包养关系|情妇|情人|不正当关系"
+  },
+
+  "info_债权人与债务人是直系亲属关系":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "债权人和债务人是不正当关系",
+    "Paragraph": "facts",
+    "Pattern": "(((原被告)(是|系))|((原告|被告|上诉人|被上诉人)(.){0,3}(与|是|系)(原告|被告|上诉人|被上诉人)(.){0,3}(的)?)|((.){0,3}与(.){0,4}))(直系亲属|母子|父子|儿子|女儿|孙子|孙女|之子|之女|之父|母亲|父亲|爷爷|奶奶|外婆|祖父|祖母|母女)(关系|[;；，,。]|$)"
+  },
+
+  "info_被告之间是夫妻关系":{
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "夫妻关系",
+    "Paragraph": "facts",
+    "Pattern": "夫妻关系"
+  },
+
+  "info_简易程序": {
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Children": [
+      {
+        "LogicLabel": "NOT",
+        "Weight": 1.0,
+        "Condition": 0.0,
+        "Name": "不允许出现该节点",
+        "Children":[
+          {
+            "LogicLabel": "AND",
+            "Weight": 1.0,
+            "Name": "不含简易程序否定表达",
+            "Paragraph": "caseSummary",
+            "Pattern": "不[^。，,;；]*简易程序"
+          }
+        ]
+      },
+      {
+        "LogicLabel": "AND",
+        "Weight": 1.0,
+        "Condition": 0.99,
+        "Name": "简易程序",
+        "Paragraph": "caseSummary",
+        "Pattern": "简易程序"
+      }
+    ]
+  },
+  "info_速裁程序": {
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "所有必须满足的条件",
+    "Paragraph": "caseSummary",
+    "Pattern": "速裁程序"
+  },
+  "info_不公开开庭": {
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "不公开开庭",
+    "Paragraph": "caseSummary",
+    "Pattern": "(不|未)公开(开庭|审理){1,2}([\u4e00-\u9fa5]?(本案|此案|该案|案件))?[,，;；。\\.]"
+  },
+  "info_不开庭审理": {
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "不开庭审理",
+    "Paragraph": "caseSummary",
+    "Pattern": "(不|未)开庭审理([\u4e00-\u9fa5]?(本案|此案|该案|案件))?[,，;；。\\.]"
+  },
+  "info_同意离婚": {
+    "LogicLabel": "AND",
+    "Weight": 1.0,
+    "Condition": 0.99,
+    "Name": "被告同意离婚",
+    "Paragraph": "defendantArgs",
+    "Pattern": "[^不](同意|愿意?)[^,，。；]*?离婚|感情[^未没不]*?破裂"
+  }
+}
