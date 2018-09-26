@@ -42,7 +42,7 @@ public class TextUtils {
   public static String getRightKeyByName(String name) {
     String[] keys = null;
     try {
-      Class<?> clazz = Class.forName("com.futuredata.rabbit.repository.entity.InfoPointKey");
+      Class<?> clazz = Class.forName("com.ocp.rabbit.repository.entity.InfoPointKey");
       Field field = clazz.getField(name);
       keys = (String[]) (field.get(name));
     } catch (Exception e) {

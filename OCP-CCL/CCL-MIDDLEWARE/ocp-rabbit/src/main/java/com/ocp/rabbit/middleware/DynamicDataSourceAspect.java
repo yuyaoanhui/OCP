@@ -19,7 +19,7 @@ import com.ocp.rabbit.middleware.orm.datasource.DynamicDataSourceContextHolder;
 public class DynamicDataSourceAspect {
   private static final Logger logger = LoggerFactory.getLogger(DynamicDataSourceAspect.class);
 
-  @Pointcut("execution(* com.futuredata.rabbit.middleware.orm.service.*Impl.*(..))")
+  @Pointcut("execution(* com.ocp.rabbit.middleware.orm.service.*Impl.*(..))")
   public void pointCut() {}
 
   /**
