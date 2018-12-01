@@ -1,6 +1,7 @@
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ocp</groupId>
@@ -119,8 +120,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.ocp</groupId>
-			<artifactId>mybatis-generator-extend</artifactId>
+			<artifactId>CCL-BASE</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ocp</groupId>
+			<artifactId>mybatis-generator-extend-1.0.0-SNAPSHOT</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/lib/mybatis-generator-extend-1.0.0-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
