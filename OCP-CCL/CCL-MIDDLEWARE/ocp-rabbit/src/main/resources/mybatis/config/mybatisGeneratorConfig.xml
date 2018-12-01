@@ -39,6 +39,8 @@
 		<!-- 生成的Dao接口 的包路径 -->
 		<javaClientGenerator type="XMLMAPPER"
 			targetPackage="${dao.package}" targetProject="${target.project}">
+			<property name="baseDao"
+				value="com.ocp.rabbit.middleware.orm.mapper.BaseMapper" />
 		</javaClientGenerator>
 
 		<!--对应数据库表名 -->
