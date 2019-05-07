@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>CSP-FILESERVER</artifactId>
 	<packaging>pom</packaging>
-	<name>文件服务组织pom文件</name>
+	<name>工作流平台组织pom文件</name>
 	<modules>
 	
 	</modules>
