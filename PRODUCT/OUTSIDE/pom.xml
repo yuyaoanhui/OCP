@@ -10,7 +10,5 @@
 	<packaging>pom</packaging>
 	<name>外部产品族组织pom文件</name>
 	<modules>
-		<!-- 智能考评系统 -->
-		<module>fd-court-kpi</module>
 	</modules>
 </project>
