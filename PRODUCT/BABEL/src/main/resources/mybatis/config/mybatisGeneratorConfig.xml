@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 配置文件路径 -->
+	<!-- <properties resource="${mybatis.generator.generatorConfig.properties}"/> -->
+	<properties resource="mybatis/config/mybatisGenerator.properties" />
+	<classPathEntry location="${drive.class.path}" />
+
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+		<plugin
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlBatchInsertPlugin"></plugin>
+		<plugin
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlGenericParadigmPlugin"></plugin>
+		<plugin
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlSerializablePlugin"></plugin>
+		<plugin
+			type="com.ocp.plugin.mybatis.generator.plugins.MysqlPageHelperPlugin"></plugin>
+
+		<commentGenerator
+			type="com.ocp.plugin.mybatis.generator.extend.MybaitsCommentGeneratorExtend">
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection connectionURL="${jdbc.url}"
+			driverClass="${jdbc.driver}" userId="${jdbc.username}" password="${jdbc.password}" />
+
+		<!--生成的model 包路径 -->
+		<javaModelGenerator targetPackage="${model.package}"
+			targetProject="${target.project}">
+			<property name="rootClass"
+				value="com.ocp.base.model.BaseModel" />
+		</javaModelGenerator>
+
+		<!--生成xml mapper文件 路径 -->
+		<sqlMapGenerator targetPackage="${xml.mapper.package}"
+			targetProject="${xml.target.project}">
+		</sqlMapGenerator>
+
+		<!-- 生成的Dao接口 的包路径 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${dao.package}" targetProject="${target.project}">
+		</javaClientGenerator>
+
+		<!--对应数据库表名 -->
+		<table schema="" tableName="test" domainObjectName="TaskInstance">
+		</table>
+	</context>
+</generatorConfiguration>
